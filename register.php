@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <div class="container" id="cont">
+    <div class="register" id="cont">
       <div class="image">
         <img
           src="https://i.pinimg.com/originals/69/3c/fc/693cfcd3cda26a77843019efb718c584.png"
