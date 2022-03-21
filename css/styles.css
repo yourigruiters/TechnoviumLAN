@@ -1,9 +1,14 @@
 /* Standaard code */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Open Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+*::selection {
+    background-color: black;
+    color: white;
 }
 
 h1,
@@ -12,5 +17,102 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Raleway", sans-serif;
+    /* font-family: 'Raleway', sans-serif; */
+}
+
+/* Landing */
+.landing-spacer {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.overlay {
+    background-image: url('https://wallpapercave.com/wp/wp9189706.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-position: center;
+    -webkit-background-size: cover;
+    background-size: 100% 100%;
+    color: transparent !important;
+    text-align: center;
+}
+
+.landing-spacer .title h1 {
+    font-size: 130px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+}
+
+.landing-spacer .title h2 {
+    font-size: 65px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-top: -20px;
+}
+
+.landing-spacer .background-video {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.landing-spacer .background-video video {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Header */
+header {
+    position: absolute;
+    z-index: 500;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    padding: 0px 30px;
+    background-color: black;
+}
+
+header.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: unset;
+}
+
+header .logo {
+}
+
+header .logo h3 {
+    font-size: 30px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+/* fake */
+.fake-spacer {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 200vh;
+    background-color: white;
 }

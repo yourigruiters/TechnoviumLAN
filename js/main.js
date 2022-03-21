@@ -1,6 +1,16 @@
-const button = document.querySelector("#klik");
-const container = document.querySelector("#cont");
+const header = document.querySelector('header');
 
-button.addEventListener("click", () => {
-  container.style.top = "150px";
+// Sticky navigation
+$(window).ready(() => {
+    if (window.pageYOffset > $(window).height() - header.offsetHeight) {
+        header.classList.add('sticky');
+    }
+});
+
+$(window).scroll(() => {
+    if (window.pageYOffset > $(window).height() - header.offsetHeight) {
+        header.classList.add('sticky');
+    } else {
+        header.classList.remove('sticky');
+    }
 });
