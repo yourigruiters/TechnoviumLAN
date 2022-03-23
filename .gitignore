@@ -1,4 +1,4 @@
-# Ignore alle bestanden die beginnen met een . (behalve .gitignore)
+# Ignore alle bestanden die beginnen met een . (Behalve .gitignore)
 .*
 !.gitignore
 !.prettierrc
