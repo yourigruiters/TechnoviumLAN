@@ -241,9 +241,9 @@ header .buttons ul li button:hover {
 
 .modal.aanmelden .image img {
     position: absolute;
-    top: -40px;
-    left: 20px;
-    width: 80%;
+    top: 0px;
+    left: 29px;
+    width: 62%;
     height: auto;
 }
 
