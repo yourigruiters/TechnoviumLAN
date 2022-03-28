@@ -8,7 +8,6 @@
     --black: #000;
 }
 
-/* Standaard code */
 * {
     margin: 0;
     padding: 0;
@@ -27,11 +26,24 @@ h3,
 h4,
 h5,
 h6 {
-    /* font-family: 'Raleway', sans-serif; */
+    font-family: 'Roboto', sans-serif;
+}
+
+p {
+    color: var(--gray);
 }
 
 body {
     width: 100%;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    padding: 0px 30px;
 }
 
 /* Landing */
@@ -155,7 +167,7 @@ header nav ul li {
 header .buttons ul {
     display: flex;
     align-items: center;
-    column-gap: 20px;
+    column-gap: 30px;
     list-style-type: none;
 }
 
@@ -181,87 +193,149 @@ header .buttons ul li button:hover {
     background-color: var(--white);
 }
 
-/* fake */
-.fake-spacer {
-    position: relative;
-    top: 0;
-    left: 0;
+main {
     width: 100%;
-    min-height: 200vh;
+    height: auto;
     background-color: var(--darker);
 }
+/* Introducie */
+.introductie-spacer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    padding: 175px 0px;
+}
 
-/* Register */
-.register-spacer {
+.introductie {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+.introductie .heading {
+    width: 100%;
+    height: auto;
+    margin-bottom: 50px;
+}
+
+.introductie .heading h2 {
+    font-size: 70px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: var(--green);
+}
+
+.introductie .heading p {
+    font-size: 26px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--white);
+}
+
+.introductie .content {
+    max-width: 1000px;
+    width: 100%;
+    height: auto;
+}
+
+.introductie .content p {
+    font-size: 16px;
+    line-height: 28px;
+    font-weight: 400;
+    color: var(--gray);
+    font-family: 'Merriweather', serif;
+}
+
+
+/* Modals */
+.modal-spacer {
     position: fixed;
-    z-index: -1;
-    top: 0;
+    z-index: 5000;
+    top: -2000px;
     left: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    min-height: 100vh;
+    min-height: 0px;
     background-color: rgb(0 0 0 / 80%);
     opacity: 0;
     transition: opacity 0.6s ease-in-out;
     overflow-y: hidden;
 }
 
-.register {
+.modal {
     display: flex;
     width: 700px;
     height: auto;
     padding: 20px;
     border-radius: 12px;
     background-color: black;
-    background-image: url('https://media.istockphoto.com/photos/modern-brick-wall-3d-rendering-picture-id1140265911?b=1&k=20&m=1140265911&s=170667a&w=0&h=cLoyrHySMr6agb3jd7kjL_KQZwW4c-JdgpCeFu_r81s=');
+    background-image: url('../media/modal.jpg');
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
 }
 
-.register .image {
+.modal .image {
     position: relative;
     display: block;
     width: 40%;
     height: auto;
 }
 
-.register .image img {
+.modal .image img {
     position: absolute;
-    top: -50px;
-    left: -95px;
-    width: 140%;
+    top: 0px;
+    left: -60px;
+    width: 100%;
     height: auto;
 }
 
-.register .content {
+.modal.aanmelden .image img {
+    position: absolute;
+    top: 0px;
+    left: 29px;
+    width: 62%;
+    height: auto;
+}
+
+.modal .content {
     width: 60%;
     height: auto;
     color: white;
     text-align: center;
 }
 
-.register .content .intro h3 {
+.modal .content .intro h3 {
     font-size: 32px;
-    color: #c22fc2;
+    color: var(--yellow);
     margin-bottom: 10px;
 }
 
-.register .content .intro p {
+.modal.aanmelden .content .intro h3 {
+    color: var(--green);
+}
+
+.modal .content .intro p {
     font-size: 14px;
     line-height: 22px;
     margin-bottom: 30px;
 }
 
-.register .content form {
+.modal .content form {
     width: 100%;
     height: auto;
     margin-bottom: 15px;
 }
 
-.register .content form input {
+.modal .content form input {
     width: 100%;
     height: 40px;
     margin-bottom: 15px;
@@ -272,12 +346,12 @@ header .buttons ul li button:hover {
     outline: none;
 }
 
-.register .content form button {
+.modal .content form button {
     width: 100%;
     height: auto;
     padding: 10px 0px 9px;
-    background-color: #a11ba1;
-    color: white;
+    background-color: var(--yellow);
+    color: var(--black);
     font-size: 16px;
     font-weight: bold;
     margin-top: 20px;
@@ -288,35 +362,57 @@ header .buttons ul li button:hover {
     cursor: pointer;
 }
 
-.register .content form button:hover {
-    background-color: #800f80;
+.modal.aanmelden .content form button {
+    background-color: var(--green);
 }
 
-.register .content .option p {
+.modal .content form button:hover {
+    background-color: var(--white);
+}
+
+.modal .content .option p {
     font-size: 14px;
     line-height: 22px;
     margin-bottom: 10px;
 }
 
-.register .content .option span {
-    color: #c22fc2;
+.modal .content .option span {
+    color: var(--green);
     cursor: pointer;
 }
 
-.register .content .option span:hover {
-    color: #a11ba1;
+.modal.aanmelden .content .option span {
+    color: var(--yellow);
+}
+
+.modal .content .option span:hover {
+    color: var(--white);
+}
+
+/* Footer */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    padding: 0px 20px;
+    background-color: var(--black);
+}
+
+footer h6 {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--gray);
+}
+
+@media only screen and (max-width: 500px) {
+    footer span {
+        display: none;
+    }
 }
 
 /* Contact */
-
-.div-spacer {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    min-height: 90vh;
-    background-color: var(--darker);
-}
 
 .container-contact {
     display: flex;
