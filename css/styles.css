@@ -27,11 +27,20 @@ h3,
 h4,
 h5,
 h6 {
-    /* font-family: 'Raleway', sans-serif; */
+    font-family: 'Roboto', sans-serif;
 }
 
 body {
     width: 100%;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    padding: 0px 30px;
 }
 
 /* Landing */
@@ -189,6 +198,60 @@ header .buttons ul li button:hover {
     width: 100%;
     min-height: 200vh;
     background-color: var(--darker);
+}
+
+/* Introducie */
+.introductie-spacer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    padding: 175px 0px;
+}
+
+.introductie {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+.introductie .heading {
+    width: 100%;
+    height: auto;
+    margin-bottom: 50px;
+}
+
+.introductie .heading h2 {
+    font-size: 70px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: var(--green);
+}
+
+.introductie .heading p {
+    font-size: 26px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--white);
+}
+
+.introductie .content {
+    max-width: 1000px;
+    width: 100%;
+    height: auto;
+}
+
+.introductie .content p {
+    font-size: 16px;
+    line-height: 28px;
+    font-weight: 400;
+    color: var(--gray);
+    font-family: 'Merriweather', serif;
 }
 
 /* Register */
