@@ -15,63 +15,51 @@ $(window).scroll(() => {
     }
 });
 
-// Register/Login overlay
-const aanmelden = document.querySelector('#aanmelden');
-const register = document.querySelector('#register');
+// Modal functionality
+const registratieKnop = document.querySelector('#registratieKnop');
+const registratieModalSpacer = document.querySelector('#registratieModal');
+const registratieModal = document.querySelector('#registratieModal .modal');
+const aanmeldKnop = document.querySelector('#aanmeldKnop');
+const aanmeldModalSpacer = document.querySelector('#aanmeldModal');
+const aanmeldModal = document.querySelector('#aanmeldModal .modal');
 
-aanmelden.addEventListener('click', () => {
-    register.style.opacity = '1';
-    register.style.zIndex = '5000';
+registratieKnop.addEventListener('click', (e) => {
+    e.stopPropagation();
+    registratieModalSpacer.style.opacity = '1';
+    registratieModalSpacer.style.minHeight = '100vh';
+    registratieModalSpacer.style.top = '0';
+});
 
-    disableScroll();
+registratieModal.addEventListener('click', (e) => {
+    e.stopPropagation();
+});
 
-    // document.body.style.position = 'fixed';
-    // document.body.style.top = `-${window.scrollY}px`;
-}); // left: 37, up: 38, right: 39, down: 40,
-// spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
-var keys = { 37: 1, 38: 1, 39: 1, 40: 1 };
+registratieModalSpacer.addEventListener('click', () => {
+    registratieModalSpacer.style.opacity = '0';
 
-function preventDefault(e) {
-    e.preventDefault();
-}
+    // Ensure effect is shown before changing base values.
+    setTimeout(() => {
+        registratieModalSpacer.style.minHeight = '0px';
+        registratieModalSpacer.style.top = '-2000px';
+    }, 500);
+});
 
-function preventDefaultForScrollKeys(e) {
-    if (keys[e.keyCode]) {
-        preventDefault(e);
-        return false;
-    }
-}
+aanmeldKnop.addEventListener('click', () => {
+    aanmeldModalSpacer.style.opacity = '1';
+    aanmeldModalSpacer.style.minHeight = '100vh';
+    aanmeldModalSpacer.style.top = '0';
+});
 
-// modern Chrome requires { passive: false } when adding event
-var supportsPassive = false;
-try {
-    window.addEventListener(
-        'test',
-        null,
-        Object.defineProperty({}, 'passive', {
-            get: function () {
-                supportsPassive = true;
-            },
-        })
-    );
-} catch (e) {}
+aanmeldModal.addEventListener('click', (e) => {
+    e.stopPropagation();
+});
 
-var wheelOpt = supportsPassive ? { passive: false } : false;
-var wheelEvent =
-    'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
+aanmeldModalSpacer.addEventListener('click', () => {
+    aanmeldModalSpacer.style.opacity = '0';
 
-// call this to Disable
-function disableScroll() {
-    window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
-    window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
-    window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
-    window.addEventListener('keydown', preventDefaultForScrollKeys, false);
-}
-
-// call this to Enable
-function enableScroll() {
-    window.removeEventListener('DOMMouseScroll', preventDefault, false);
-    window.removeEventListener(wheelEvent, preventDefault, wheelOpt);
-    window.removeEventListener('touchmove', preventDefault, wheelOpt);
-    window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
-}
+    // Ensure effect is shown before changing base values.
+    setTimeout(() => {
+        aanmeldModalSpacer.style.minHeight = '0px';
+        aanmeldModalSpacer.style.top = '-2000px';
+    }, 500);
+});

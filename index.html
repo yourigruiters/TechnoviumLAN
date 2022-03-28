@@ -37,17 +37,14 @@
                 </nav>
                 <div class="buttons">
                     <ul>
-                        >
                         <li>
-                            <button id="aanmelden">Aanmelden</button>
+                            <button id="aanmeldKnop">Aanmelden</button>
                         </li>
-                        >
                         <li>
-                            <button class="yellow" id="registeren">
+                            <button class="yellow" id="registratieKnop">
                                 Registreren
                             </button>
                         </li>
-                        >
                     </ul>
                 </div>
             </header>
@@ -92,18 +89,15 @@
             </h6>
         </footer>
 
-        <!-- Register Modal -->
-        <div class="register-spacer" id="register">
-            <div class="register">
+        <!-- Aanmeld Modal -->
+        <div class="modal-spacer" id="aanmeldModal">
+            <div class="modal aanmelden">
                 <div class="image">
-                    <img
-                        src="https://i.pinimg.com/originals/69/3c/fc/693cfcd3cda26a77843019efb718c584.png"
-                        alt="anime"
-                    />
+                    <img src="media/aanmelden.gif" alt="anime" />
                 </div>
                 <div class="content">
                     <div class="intro">
-                        <h3>Register</h3>
+                        <h3>Aanmelden</h3>
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing
                             elit. Magni debitis delectus quam nobis illum
@@ -115,7 +109,44 @@
                             type="text"
                             name=""
                             id=""
-                            placeholder="Username..."
+                            placeholder="Gebruikersnaam..."
+                        />
+                        <input
+                            type="text"
+                            name=""
+                            id=""
+                            placeholder="Wachtwoord..."
+                        />
+                        <button type="submit" name="" id="">Aanmelden</button>
+                    </form>
+                    <div class="option">
+                        <p>Nog geen account? <span>Registreer</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Register Modal -->
+        <div class="modal-spacer" id="registratieModal">
+            <div class="modal">
+                <div class="image">
+                    <img src="media/registreer.png" alt="anime" />
+                </div>
+                <div class="content">
+                    <div class="intro">
+                        <h3>Registreren</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Magni debitis delectus quam nobis illum
+                            dolorum?
+                        </p>
+                    </div>
+                    <form action="">
+                        <input
+                            type="text"
+                            name=""
+                            id=""
+                            placeholder="Gebruikersnaam..."
                         />
                         <input
                             type="text"
@@ -127,18 +158,18 @@
                             type="text"
                             name=""
                             id=""
-                            placeholder="Password..."
+                            placeholder="Wachtwoord..."
                         />
                         <input
                             type="text"
                             name=""
                             id=""
-                            placeholder="Password repeat..."
+                            placeholder="Wachtwoord herhalen..."
                         />
-                        <button type="submit" name="" id="">Register</button>
+                        <button type="submit" name="" id="">Registreer</button>
                     </form>
                     <div class="option">
-                        <p>Lorem ipsum dolor sit amet? <span>Sign in</span></p>
+                        <p>Heb je al een account? <span>Meld je aan</span></p>
                     </div>
                 </div>
             </div>
