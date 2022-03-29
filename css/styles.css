@@ -202,6 +202,7 @@ header .buttons ul li button:hover {
     min-height: 200vh;
     background-color: var(--darker);
 }
+
 /* Introducie */
 .introductie-spacer {
     display: flex;
@@ -256,6 +257,212 @@ header .buttons ul li button:hover {
     font-family: 'Merriweather', serif;
 }
 
+/* Informatie */
+.informatie-spacer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 150px;
+    width: 100%;
+    height: auto;
+    padding: 175px 0px;
+}
+
+.informatie-blok {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+
+.informatie-blok .informatie {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    height: auto;
+    padding: 50px 50px 50px 100px;
+}
+
+.informatie-blok .informatie .heading {
+    width: 100%;
+    height: auto;
+    margin-bottom: 50px;
+}
+
+.informatie-blok .informatie .heading h3 {
+    font-size: 70px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: var(--green);
+}
+
+.informatie-blok .informatie .heading p {
+    font-size: 26px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--white);
+}
+
+.informatie-blok .informatie .content {
+    width: 100%;
+    height: auto;
+}
+
+.informatie-blok .informatie .content p {
+    font-size: 16px;
+    line-height: 28px;
+    font-weight: 400;
+    color: var(--gray);
+    font-family: 'Merriweather', serif;
+}
+
+.informatie-blok .afbeelding {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: auto;
+}
+
+.informatie-blok .afbeelding img {
+    display: block;
+    width: 70%;
+    height: auto;
+}
+
+.informatie-blok.right-handed .informatie {
+    padding: 50px 100px 50px 50px;
+}
+
+.informatie-blok.right-handed .informatie .heading h3 {
+    color: var(--yellow);
+}
+
+.informatie-blok.right-handed .afbeelding img {
+    width: 90%;
+}
+
+@media only screen and (max-width: 1350px) {
+    .informatie-blok .informatie {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        height: auto;
+        padding: 25px 25px 25px 75px;
+    }
+
+    .informatie-blok.right-handed .informatie {
+        padding: 25px 75px 25px 25px;
+    }
+
+    .informatie-blok .afbeelding img {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .informatie-blok .informatie .heading h3 {
+        font-size: 58px;
+    }
+
+    .informatie-blok .informatie .heading p {
+        font-size: 24px;
+    }
+
+    .informatie-blok .informatie .content p {
+        font-size: 15px;
+    }
+
+    .informatie-blok .afbeelding img {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .informatie-blok {
+        flex-direction: column;
+        row-gap: 50px;
+    }
+
+    .informatie-blok .informatie {
+        width: 100%;
+        padding: 50px;
+        text-align: center;
+    }
+
+    .informatie-blok.right-handed .informatie {
+        padding: 50px;
+    }
+
+    .informatie-blok .informatie .heading {
+        margin-bottom: 30px;
+    }
+
+    .informatie-blok .informatie .heading h3 {
+        font-size: 70px;
+    }
+
+    .informatie-blok .informatie .heading p {
+        font-size: 26px;
+    }
+
+    .informatie-blok .informatie .content p {
+        font-size: 16px;
+    }
+
+    .informatie-blok .afbeelding {
+        width: 100%;
+    }
+
+    .informatie-blok .afbeelding img {
+        max-width: 500px;
+        width: 80%;
+    }
+
+    .informatie-blok.right-handed .afbeelding img {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .informatie-blok .informatie {
+        padding: 25px;
+    }
+
+    .informatie-blok.right-handed .informatie {
+        padding: 25px;
+    }
+
+    .informatie-blok .informatie .heading h3 {
+        font-size: 58px;
+    }
+
+    .informatie-blok .informatie .heading p {
+        font-size: 24px;
+    }
+
+    .informatie-blok .informatie .content p {
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .informatie-blok .informatie .heading h3 {
+        font-size: 46px;
+    }
+
+    .informatie-blok .informatie .heading p {
+        font-size: 22px;
+    }
+
+    .informatie-blok .informatie .content p {
+        font-size: 14px;
+    }
+}
 
 /* Modals */
 .modal-spacer {
