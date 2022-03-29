@@ -1,18 +1,18 @@
-let countDownDate = new Date("Jan 5, 2024 15:00:00").getTime();
+const countDownDate = new Date("Jan 5, 2024 15:00:00").getTime();
 
-let time = setInterval( () => {
+const time = setInterval(() => {
+    const now = new Date().getTime();
+    const timeDistance = countDownDate - now;
 
-    let now = new Date().getTime();
-    let timeDistance = countDownDate - now;
-
-    let days = Math.floor(timeDistance / (1000 * 60 * 60 * 24));
-    let hours = Math.floor(timeDistance % (1000 * 60 * 60 * 24) / (1000 * 60 * 60));
-    let minutes = Math.floor(timeDistance % (1000 * 60 * 60) / (1000 * 60));
-    let secondes = Math.floor(timeDistance % (1000 * 60) / (1000));
+    const dag = Math.floor(timeDistance / (1000 * 60 * 60 * 24));
+    const uur = Math.floor(timeDistance % (1000 * 60 * 60 * 24) / (1000 * 60 * 60));
+    const minuten = Math.floor(timeDistance % (1000 * 60 * 60) / (1000 * 60));
+    const secondes = Math.floor(timeDistance % (1000 * 60) / (1000));
 
     const countdownTimer = document.querySelector("#countdown");
-
-    countdownTimer.innerHTML = days + "D " + hours + "H " + minutes + "M " + secondes + "S ";
+    console.log(secondes)
+    
+    countdownTimer.innerHTML = `${dag}<span>D </span>${uur < 10 ? '0'+uur : uur}<span>U </span>${minuten < 10 ? '0'+minuten : minuten}<span>M </span>${secondes < 10 ?  '0'+secondes : secondes}<span>S </span>`;
 
     if(timeDistance < 0) {
         clearInterval(x);
@@ -22,4 +22,3 @@ let time = setInterval( () => {
 }, 1000);
 
 
-    

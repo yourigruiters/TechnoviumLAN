@@ -208,7 +208,8 @@ main {
     justify-content: center;
     width: 100%;
     height: auto;
-    padding: 175px 0px;
+    padding-top: 175px;
+    padding-bottom: 75px;
 }
 
 .introductie {
@@ -260,16 +261,29 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 150px;
-    width: 500px;
-    margin-top: 50px;
+    height: 170px;
+    width: 800px;
     background-color: var(--green);
-    font-size: 60px;
+    font-size: 90px;
+    font-weight: 800;
     border-radius: 40px;
 }
 
 .timer-text {   
     color: var(--darker);
+}
+
+.timer-text span {
+    font-size: 55px;
+}
+
+.timer-spacer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding:    75px 0px;
 }
 
 /* Modals */
