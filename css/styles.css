@@ -256,6 +256,21 @@ main {
     font-family: 'Merriweather', serif;
 }
 
+.timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    width: 500px;
+    margin-top: 50px;
+    background-color: var(--green);
+    font-size: 60px;
+    border-radius: 40px;
+}
+
+.timer-text {   
+    color: var(--dark);
+}
 
 /* Modals */
 .modal-spacer {
