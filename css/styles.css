@@ -269,7 +269,7 @@ main {
 }
 
 .timer-text {   
-    color: var(--dark);
+    color: var(--darker);
 }
 
 /* Modals */
