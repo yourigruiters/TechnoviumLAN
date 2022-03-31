@@ -261,9 +261,9 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 170px;
+    height: 150px;
     width: 800px;
-    background-color: var(--green);
+    background-color: var(--yellow);
     font-size: 90px;
     font-weight: 800;
     border-radius: 40px;
@@ -283,7 +283,10 @@ main {
     align-items: center;
     width: 100%;
     height: auto;
-    padding:    75px 0px;
+    padding: 75px 0px;
+    background-image: url(../media/mariofoto.jpeg);
+    background-size: cover;
+    box-shadow: inset 0 0 0 1000px rgb(0 0 0 / 50%);  
 }
 
 /* Modals */
