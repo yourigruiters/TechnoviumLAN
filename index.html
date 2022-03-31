@@ -25,14 +25,14 @@
                     Your browser does not support the video tag.
                 </video>
             </div>
-            <header>
+            <header class="landing">
                 <div class="logo overlay"><h3>TechnoviumLAN</h3></div>
                 <nav>
                     <ul>
                         <a href="index.html"><li>Home</li></a>
                         <a href="#"><li>Inschrijven</li></a>
                         <a href="huisregels.html"><li>Huisregels</li></a>
-                        <a href="#"><li>Contact</li></a>
+                        <a href="contact.html"><li>Contact</li></a>
                     </ul>
                 </nav>
                 <div class="buttons">
@@ -49,8 +49,9 @@
                 </div>
             </header>
         </section>
-        <section class="fake-spacer">
-            <div class="introductie-spacer">
+
+        <main>
+            <section class="introductie-spacer">
                 <div class="container">
                     <div class="introductie">
                         <div class="heading">
@@ -79,8 +80,17 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="informatie-spacer">
+            </section>
+
+            <section class="timer-spacer">
+                <div class="container">
+                    <div class="timer">
+                        <p class="timer-text" id="countdown"></p>         
+                    </div>              
+                </div>     
+            </section>
+            
+            <section class="informatie-spacer">
                 <div class="informatie-blok">
                     <div class="informatie">
                         <div class="heading">
@@ -143,8 +153,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </main>
+     
+
         <footer>
             <h6>
                 © 2022 | TechnoviumLAN<span>
@@ -241,5 +253,6 @@
 
         <script src="js/jQuery.js"></script>
         <script src="js/main.js"></script>
+        <script src="js/index.js"></script>
     </body>
 </html>

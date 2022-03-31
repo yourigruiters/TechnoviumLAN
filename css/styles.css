@@ -104,7 +104,7 @@ body {
 
 /* Header */
 header {
-    position: absolute;
+    position: relative;
     z-index: 500;
     bottom: 0;
     left: 0;
@@ -115,6 +115,10 @@ header {
     height: 80px;
     padding: 0px 50px;
     background-color: var(--black);
+}
+
+header.landing {
+    position: absolute;
 }
 
 header.sticky {
@@ -193,14 +197,11 @@ header .buttons ul li button:hover {
     background-color: var(--white);
 }
 
-/* fake */
-.fake-spacer {
-    position: relative;
-    top: 0;
-    left: 0;
+main {
     width: 100%;
-    min-height: 200vh;
+    height: auto;
     background-color: var(--darker);
+    padding: 175px 0px;
 }
 
 /* Introducie */
@@ -209,7 +210,6 @@ header .buttons ul li button:hover {
     justify-content: center;
     width: 100%;
     height: auto;
-    padding: 175px 0px 50px 0px;
 }
 
 .introductie {
@@ -257,6 +257,39 @@ header .buttons ul li button:hover {
     font-family: 'Merriweather', serif;
 }
 
+.timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    width: 800px;
+    background-color: var(--yellow);
+    font-size: 90px;
+    font-weight: 800;
+    border-radius: 40px;
+}
+
+.timer-text {   
+    color: var(--darker);
+}
+
+.timer-text span {
+    font-size: 55px;
+}
+
+.timer-spacer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    margin: 175px 0px;
+    padding: 75px 0px;
+    background-image: url(../media/mariofoto.jpeg);
+    background-size: cover;
+    box-shadow: inset 0 0 0 1000px rgb(0 0 0 / 50%); 
+}
+
 /* Informatie */
 .informatie-spacer {
     display: flex;
@@ -265,7 +298,6 @@ header .buttons ul li button:hover {
     row-gap: 150px;
     width: 100%;
     height: auto;
-    padding: 175px 0px;
 }
 
 .informatie-blok {
@@ -670,4 +702,28 @@ footer h6 {
     footer span {
         display: none;
     }
+}
+
+/* Contact */
+
+.container-contact {
+    display: flex;
+    width: 100%;
+    height: 90vh;
+}
+
+.inner-container-contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+}
+
+.google-maps {
+    border-top: 4px solid var(--yellow) ;
+    border-bottom: 4px solid var(--yellow) ;
+    border-left: 4px solid var(--green);
+    border-right: 4px solid var(--green);
+    border-radius: 4px;
 }
