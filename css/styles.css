@@ -202,13 +202,14 @@ header .buttons ul li button:hover {
     min-height: 200vh;
     background-color: var(--darker);
 }
+
 /* Introducie */
 .introductie-spacer {
     display: flex;
     justify-content: center;
     width: 100%;
     height: auto;
-    padding: 175px 0px;
+    padding: 175px 0px 50px 0px;
 }
 
 .introductie {
@@ -256,6 +257,55 @@ header .buttons ul li button:hover {
     font-family: 'Merriweather', serif;
 }
 
+/* Huisregels */
+.huisregels-spacer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    padding: 100px 0px;
+}
+
+.huisregels {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+.huisregels .content {
+    max-width: 750px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 100px;
+}
+
+.huisregels .content h5 {
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--white);
+    margin-bottom: 20px;
+}
+
+.huisregels .content p {
+    font-size: 16px;
+    line-height: 28px;
+    font-weight: 400;
+    color: var(--gray);
+    font-family: 'Merriweather', serif;
+}
+
+.huisregels .content ul li {
+    list-style-type: none;
+    font-size: 16px;
+    line-height: 28px;
+    font-weight: 400;
+    color: var(--gray);
+    font-family: 'Merriweather', serif;
+}
 
 /* Modals */
 .modal-spacer {
