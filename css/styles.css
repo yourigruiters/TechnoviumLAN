@@ -46,6 +46,69 @@ body {
     padding: 0px 30px;
 }
 
+.title {
+    font-size: 70px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+.subtitle {
+    font-size: 26px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--white);
+}
+
+.text {
+    font-size: 16px;
+    line-height: 28px;
+    font-weight: 400;
+    color: var(--gray);
+    font-family: 'Merriweather', serif;
+}
+
+.green {
+    color: var(--green);
+}
+
+.yellow {
+    color: var(--yellow);
+}
+
+.white {
+    color: var(--white);
+}
+
+@media only screen and (max-width: 1200px) {
+    .title {
+        font-size: 58px;
+    }
+
+    .subtitle {
+        font-size: 24px;
+    }
+
+    .text {
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .title {
+        font-size: 46px !important;
+    }
+
+    .subtitle {
+        font-size: 22px !important;
+    }
+
+    .text {
+        font-size: 14px !important;
+    }
+}
+
 /* Landing */
 .landing-spacer {
     position: relative;
@@ -227,36 +290,19 @@ main {
     margin-bottom: 50px;
 }
 
-.introductie .heading h2 {
-    font-size: 70px;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    color: var(--green);
-}
-
-.introductie .heading p {
-    font-size: 26px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--white);
-}
-
 .introductie .content {
     max-width: 1000px;
     width: 100%;
     height: auto;
 }
 
-.introductie .content p {
-    font-size: 16px;
-    line-height: 28px;
-    font-weight: 400;
-    color: var(--gray);
-    font-family: 'Merriweather', serif;
+@media only screen and (max-width: 1100px) {
+    .introductie .heading {
+        margin-bottom: 30px;
+    }
 }
 
+/* Timer */
 .timer {
     display: flex;
     justify-content: center;
@@ -269,7 +315,7 @@ main {
     border-radius: 40px;
 }
 
-.timer-text {   
+.timer-text {
     color: var(--darker);
 }
 
@@ -287,7 +333,7 @@ main {
     padding: 75px 0px;
     background-image: url(../media/mariofoto.jpeg);
     background-size: cover;
-    box-shadow: inset 0 0 0 1000px rgb(0 0 0 / 50%); 
+    box-shadow: inset 0 0 0 1000px rgb(0 0 0 / 50%);
 }
 
 /* Informatie */
@@ -322,33 +368,9 @@ main {
     margin-bottom: 50px;
 }
 
-.informatie-blok .informatie .heading h3 {
-    font-size: 70px;
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    color: var(--green);
-}
-
-.informatie-blok .informatie .heading p {
-    font-size: 26px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--white);
-}
-
 .informatie-blok .informatie .content {
     width: 100%;
     height: auto;
-}
-
-.informatie-blok .informatie .content p {
-    font-size: 16px;
-    line-height: 28px;
-    font-weight: 400;
-    color: var(--gray);
-    font-family: 'Merriweather', serif;
 }
 
 .informatie-blok .afbeelding {
@@ -367,10 +389,6 @@ main {
 
 .informatie-blok.right-handed .informatie {
     padding: 50px 100px 50px 50px;
-}
-
-.informatie-blok.right-handed .informatie .heading h3 {
-    color: var(--yellow);
 }
 
 .informatie-blok.right-handed .afbeelding img {
@@ -397,18 +415,6 @@ main {
 }
 
 @media only screen and (max-width: 1200px) {
-    .informatie-blok .informatie .heading h3 {
-        font-size: 58px;
-    }
-
-    .informatie-blok .informatie .heading p {
-        font-size: 24px;
-    }
-
-    .informatie-blok .informatie .content p {
-        font-size: 15px;
-    }
-
     .informatie-blok .afbeelding img {
         width: 90%;
     }
@@ -434,15 +440,15 @@ main {
         margin-bottom: 30px;
     }
 
-    .informatie-blok .informatie .heading h3 {
+    .informatie-blok .informatie .heading .title {
         font-size: 70px;
     }
 
-    .informatie-blok .informatie .heading p {
+    .informatie-blok .informatie .heading .subtitle {
         font-size: 26px;
     }
 
-    .informatie-blok .informatie .content p {
+    .informatie-blok .informatie .content .text {
         font-size: 16px;
     }
 
@@ -469,32 +475,19 @@ main {
         padding: 25px;
     }
 
-    .informatie-blok .informatie .heading h3 {
+    .informatie-blok .informatie .heading .title {
         font-size: 58px;
     }
 
-    .informatie-blok .informatie .heading p {
+    .informatie-blok .informatie .heading .subtitle {
         font-size: 24px;
     }
 
-    .informatie-blok .informatie .content p {
+    .informatie-blok .informatie .content .text {
         font-size: 15px;
     }
 }
 
-@media only screen and (max-width: 700px) {
-    .informatie-blok .informatie .heading h3 {
-        font-size: 46px;
-    }
-
-    .informatie-blok .informatie .heading p {
-        font-size: 22px;
-    }
-
-    .informatie-blok .informatie .content p {
-        font-size: 14px;
-    }
-}
 /* Huisregels */
 .huisregels-spacer {
     display: flex;
@@ -528,21 +521,8 @@ main {
     margin-bottom: 20px;
 }
 
-.huisregels .content p {
-    font-size: 16px;
-    line-height: 28px;
-    font-weight: 400;
-    color: var(--gray);
-    font-family: 'Merriweather', serif;
-}
-
-.huisregels .content ul li {
+.huisregels .content ul {
     list-style-type: none;
-    font-size: 16px;
-    line-height: 28px;
-    font-weight: 400;
-    color: var(--gray);
-    font-family: 'Merriweather', serif;
 }
 
 /* Modals */
@@ -721,8 +701,8 @@ footer h6 {
 }
 
 .google-maps {
-    border-top: 4px solid var(--yellow) ;
-    border-bottom: 4px solid var(--yellow) ;
+    border-top: 4px solid var(--yellow);
+    border-bottom: 4px solid var(--yellow);
     border-left: 4px solid var(--green);
     border-right: 4px solid var(--green);
     border-radius: 4px;
