@@ -23,7 +23,7 @@
                 $stmt->execute();
     
                 // Melding geven dat gebruiker is aangemaakt
-                header("Location: ../index.php");
+                header("Location: ../index.php?bericht=gelukt");
                 exit();
             } else {
                 // Gebruiker bestaat al met naam of email
