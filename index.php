@@ -20,7 +20,7 @@
         <nav>
             <ul>
                 <a href="index.php"><li>Home</li></a>
-                <a href="#"><li>Inschrijven</li></a>
+                <a href="inschrijven.php"><li>Inschrijven</li></a>
                 <a href="huisregels.php"><li>Huisregels</li></a>
                 <a href="contact.php"><li>Contact</li></a>
             </ul>
