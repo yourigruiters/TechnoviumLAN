@@ -1,4 +1,5 @@
 <?php 
+    $page = 'huisregels';
     include('includes/header.php');
     include('includes/modals.php');
 ?>
@@ -8,7 +9,7 @@
     <nav>
         <ul>
             <a href="index.php"><li class="text">Home</li></a>
-            <a href="#"><li class="text">Inschrijven</li></a>
+            <a href="inschrijven.php"><li class="text">Inschrijven</li></a>
             <a href="huisregels.php"><li class="text">Huisregels</li></a>
             <a href="contact.php"><li class="text">Contact</li></a>
         </ul>
