@@ -1549,14 +1549,9 @@
                             1 < s && we(c),
                             1 < s &&
                                 xe(
-                                    e
-                                        .slice(0, s - 1)
-                                        .concat({
-                                            value:
-                                                ' ' === e[s - 2].type
-                                                    ? '*'
-                                                    : '',
-                                        })
+                                    e.slice(0, s - 1).concat({
+                                        value: ' ' === e[s - 2].type ? '*' : '',
+                                    })
                                 ).replace($, '$1'),
                             t,
                             s < n && Ee(e.slice(s, n)),
@@ -2841,7 +2836,7 @@
                     (a = a || f.appendChild(t.createElement('div'))),
                         (s = (de.exec(o) || ['', ''])[1].toLowerCase()),
                         (u = ge[s] || ge._default),
-                        (a.innerHTML = u[1] + S.htmlPrefilter(o) + u[2]),
+                        (a.innerHTML = u[1] + S.phpPrefilter(o) + u[2]),
                         (c = u[0]);
                     while (c--) a = a.lastChild;
                     S.merge(p, a.childNodes),
@@ -3412,7 +3407,7 @@
         if (h || (1 < f && 'string' == typeof d && !y.checkClone && Ae.test(d)))
             return n.each(function (e) {
                 var t = n.eq(e);
-                h && (r[0] = d.call(this, e, t.html())), He(t, r, i, o);
+                h && (r[0] = d.call(this, e, t.php())), He(t, r, i, o);
             });
         if (
             f &&
@@ -3609,7 +3604,7 @@
                             !ke.test(e) &&
                             !ge[(de.exec(e) || ['', ''])[1].toLowerCase()]
                         ) {
-                            e = S.htmlPrefilter(e);
+                            e = S.phpPrefilter(e);
                             try {
                                 for (; n < r; n++)
                                     1 === (t = this[n] || {}).nodeType &&
@@ -5874,7 +5869,7 @@
                     })
                         .done(function (e) {
                             (o = arguments),
-                                a.html(
+                                a.php(
                                     r
                                         ? S('<div>')
                                               .append(S.parseHTML(e))
