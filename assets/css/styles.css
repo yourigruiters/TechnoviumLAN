@@ -333,7 +333,7 @@ main {
     height: auto;
     margin: 175px 0px;
     padding: 75px 0px;
-    background-image: url(../assets/media/mariofoto.jpeg);
+    background-image: url(../media/mariofoto.jpeg);
     background-size: cover;
     box-shadow: inset 0 0 0 1000px rgb(0 0 0 / 50%);
 }
@@ -617,7 +617,7 @@ main {
     padding: 20px;
     border-radius: 12px;
     background-color: black;
-    background-image: url('../assets/media/modal.jpg');
+    background-image: url('../media/modal.jpg');
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
