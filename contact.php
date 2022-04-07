@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
     <title>Contact</title>
 </head>
 <body>
@@ -13,10 +13,10 @@
             <div class="logo overlay"><h3>TechnoviumLAN</h3></div>
             <nav>
                 <ul>
-                    <a href="index.html"><li>Home</li></a>
-                    <a href="#"><li>Inschrijven</li></a>
-                    <a href="#"><li>Huisregels</li></a>
-                    <a href="contact.html"><li>Contact</li></a>
+                <a href="index.php"><li>Home</li></a>
+                <a href="inschrijven.php"><li>Inschrijven</li></a>
+                <a href="huisregels.php"><li>Huisregels</li></a>
+                <a href="contact.php"><li>Contact</li></a>
                 </ul>
             </nav>
             <div class="buttons">
