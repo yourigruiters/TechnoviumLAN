@@ -11,6 +11,6 @@
             href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Roboto:wght@300;400;700;900&display=swap"
             rel="stylesheet"
         />
-        <link rel="stylesheet" href="css/styles.css" />
+        <link rel="stylesheet" href="assets/css/styles.css" />
     </head>
     <body>

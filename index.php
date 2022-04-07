@@ -11,7 +11,7 @@
     </div>
     <div class="background-video">
         <video autoplay muted loop>
-            <source src="media/video/background.mp4" type="video/mp4" />
+            <source src="assets/media/video/background.mp4" type="video/mp4" />
             Your browser does not support the video tag.
         </video>
     </div>
@@ -109,12 +109,12 @@
                 </div>
             </div>
             <div class="afbeelding">
-                <img src="media/tekst1.png" alt="" />
+                <img src="assets/media/tekst1.png" alt="" />
             </div>
         </div>
         <div class="informatie-blok right-handed">
             <div class="afbeelding">
-                <img src="media/tekst2.png" alt="" />
+                <img src="assets/media/tekst2.png" alt="" />
             </div>
             <div class="informatie">
                 <div class="heading">

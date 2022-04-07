@@ -6,12 +6,12 @@
             </h6>
         </footer>
 
-        <script src="js/jQuery.js"></script>
+        <script src="assets/js/jQuery.js"></script>
         <?php 
             if($page === 'index') {
-                echo '<script src="js/index.js"></script>';
+                echo '<script src="assets/js/index.js"></script>';
             }
         ?>
-        <script src="js/modals.js"></script>
+        <script src="assets/js/modals.js"></script>
     </body>
 </html>

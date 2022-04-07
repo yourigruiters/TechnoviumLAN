@@ -2,7 +2,7 @@
 <div class="modal-spacer" id="aanmeldModal">
     <div class="modal aanmelden">
         <div class="image">
-            <img src="media/aanmelden.gif" alt="anime" />
+            <img src="assets/media/aanmelden.gif" alt="anime" />
         </div>
         <div class="content">
             <div class="intro">
@@ -40,7 +40,7 @@
 <div class="modal-spacer" id="registratieModal">
     <div class="modal">
         <div class="image">
-            <img src="media/registreer.png" alt="anime" />
+            <img src="assets/media/registreer.png" alt="anime" />
         </div>
         <div class="content">
             <div class="intro">

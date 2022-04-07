@@ -42,7 +42,7 @@
         <div class="container">
             <div class="inschrijven">
                 <div class="floorplan">
-                    <img src="media/floorplan.png" alt="floorplan" />
+                    <img src="assets/media/floorplan.png" alt="floorplan" />
                 </div>
             </div>
         </div>
