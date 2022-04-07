@@ -8,10 +8,10 @@
     <div class="logo overlay"><h3>TechnoviumLAN</h3></div>
     <nav>
         <ul>
-            <a href="index.php"><li class="text">Home</li></a>
-            <a href="inschrijven.php"><li class="text">Inschrijven</li></a>
-            <a href="huisregels.php"><li class="text">Huisregels</li></a>
-            <a href="contact.php"><li class="text">Contact</li></a>
+            <a href="index.php"><li>Home</li></a>
+            <a href="inschrijven.php"><li>Inschrijven</li></a>
+            <a href="huisregels.php"><li>Huisregels</li></a>
+            <a href="contact.php"><li>Contact</li></a>
         </ul>
     </nav>
     <div class="buttons">

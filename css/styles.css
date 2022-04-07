@@ -263,6 +263,7 @@ header .buttons ul li button:hover {
 main {
     width: 100%;
     height: auto;
+    min-height: calc(100vh - 50px);
     background-color: var(--darker);
     padding: 175px 0px;
 }

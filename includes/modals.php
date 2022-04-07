@@ -30,7 +30,7 @@
                 <button type="submit" name="aanmelden">Aanmelden</button>
             </form>
             <div class="option">
-                <p>Nog geen account? <span>Registreer</span></p>
+                <p>Nog geen account? <span id="registreerlink">Registreer</span></p>
             </div>
         </div>
     </div>
@@ -80,7 +80,7 @@
                 <button type="submit" name="registreer">Registreer</button>
             </form>
             <div class="option">
-                <p>Heb je al een account? <span>Meld je aan</span></p>
+                <p>Heb je al een account? <span id="aanmeldLink">Meld je aan</span></p>
             </div>
         </div>
     </div>

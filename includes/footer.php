@@ -12,6 +12,6 @@
                 echo '<script src="js/index.js"></script>';
             }
         ?>
-        <script src="js/main.js"></script>
+        <script src="js/modals.js"></script>
     </body>
 </html>
