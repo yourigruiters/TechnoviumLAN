@@ -41,7 +41,9 @@
     <section class="inschrijven-spacer">
         <div class="container">
             <div class="inschrijven">
-
+                <div class="floorplan">
+                    <img src="media/floorplan.png" alt="floorplan" />
+                </div>
             </div>
         </div>
     </section>
