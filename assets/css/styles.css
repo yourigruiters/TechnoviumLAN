@@ -769,6 +769,8 @@ footer h6 {
 }
 
 .google-maps {
+    width: 500px;
+    height: 500px;
     border-top: 4px solid var(--yellow);
     border-bottom: 4px solid var(--yellow);
     border-left: 4px solid var(--green);
