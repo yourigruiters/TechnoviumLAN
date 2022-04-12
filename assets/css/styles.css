@@ -567,7 +567,6 @@ main {
     align-items: center;
     width: 100%;
     height: auto;
-    text-align: center;
 }
 
 .huisregels .accordion {
@@ -576,7 +575,11 @@ main {
     height: 60px;
     margin-bottom: 100px;
     overflow: hidden;
-    transition: all 2s;
+    transition: height 1s;
+}
+
+.huisregels .accordion.show {
+    height: auto;
 }
 
 .huisregels .accordion:last-child {
@@ -584,19 +587,32 @@ main {
 }
 
 .huisregels .accordion .heading {
+    position: relative;
     display: flex;
+    align-items: center;
     width: 100%;
     height: 60px;
 }
 
-.huisregels .accordion .heading .heading-titel {
-    width: 75%;
-    height: 60px;
+.huisregels .accordion .heading::after {
+    content: '+';
+    position: absolute;
+    right: 10px;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--white);
 }
 
-.huisregels .accordion .heading .heading-plusminus {
-    width: 25%;
-    height: 60px;
+.huisregels .accordion.show .heading::after {
+    content: '-';
+}
+
+.huisregels .accordion .heading .titel {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
 }
 
 .huisregels .accordion .content {
@@ -609,7 +625,6 @@ main {
     font-weight: 700;
     letter-spacing: 2px;
     color: var(--white);
-    margin-bottom: 20px;
 }
 
 .huisregels .accordion ul {

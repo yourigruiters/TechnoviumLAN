@@ -43,24 +43,21 @@
             <div class="huisregels">
                 <div class="accordion">
                     <div class="heading">
-                        <div class="heading-titel">
+                        <div class="titel">
                             <h5>Artikel 1: Meenemen</h5>
-                        </div>
-                        <div class="heading-plusminus">
-                            <h5>+</h5>
                         </div>
                     </div>
                     <div class="content">
-                    <p class="text">Hieronder is een lijst met spullen die meegenomen moeten worden, u bent dus zelf verantwoordelijk om dit mee te nemen. <br /><br />
-                <ul>
-                    <li class="text">Apparatuur en toebehoren (denk aan de ruimte en je buren)</li>
-                    <li class="text">Eten en drinken voor jezelf</li>
-                    <li class="text">Een stekkerdoos met voldoende plaatsen</li>
-                    <li class="text">Je Legitiematiebewijs en studentenpas</li>
-                    <li class="text">(optioneel) Netwerkkabel - Rond de 5 meter</li>
-                    <li class="text">(optioneel) Een headset of oordoppen (GEEN luidsprekers)</li>
-                </ul></p>
-
+                        <p class="text">Hieronder is een lijst met spullen die meegenomen moeten worden, u bent dus zelf verantwoordelijk om dit mee te nemen. <br /><br />
+                            <ul>
+                                <li class="text">Apparatuur en toebehoren (denk aan de ruimte en je buren)</li>
+                                <li class="text">Eten en drinken voor jezelf</li>
+                                <li class="text">Een stekkerdoos met voldoende plaatsen</li>
+                                <li class="text">Je Legitiematiebewijs en studentenpas</li>
+                                <li class="text">(optioneel) Netwerkkabel - Rond de 5 meter</li>
+                                <li class="text">(optioneel) Een headset of oordoppen (GEEN luidsprekers)</li>
+                            </ul>
+                        </p>
                     </div>
                 </div>
                 <div class="accordion">
