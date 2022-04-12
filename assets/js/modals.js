@@ -1,8 +1,8 @@
 // Modal functionality
-const registratieKnop = document.querySelector('#registratieKnop');
+const registratieKnoppen = document.querySelectorAll('.registratieKnop');
 const registratieModalSpacer = document.querySelector('#registratieModal');
 const registratieModal = document.querySelector('#registratieModal .modal');
-const aanmeldKnop = document.querySelector('#aanmeldKnop');
+const aanmeldKnoppen = document.querySelectorAll('.aanmeldKnop');
 const aanmeldModalSpacer = document.querySelector('#aanmeldModal');
 const aanmeldModal = document.querySelector('#aanmeldModal .modal');
 const aanmeldLink = document.querySelector('#aanmeldLink');
@@ -24,9 +24,11 @@ const hideModal = (modal) => {
     }, 500);
 };
 
-registratieKnop.addEventListener('click', (e) => {
-    e.stopPropagation();
-    showModal(registratieModalSpacer);
+registratieKnoppen.forEach((registratieKnop) => {
+    registratieKnop.addEventListener('click', (e) => {
+        e.stopPropagation();
+        showModal(registratieModalSpacer);
+    });
 });
 
 registratieModal.addEventListener('click', (e) => {
@@ -37,8 +39,10 @@ registratieModalSpacer.addEventListener('click', () => {
     hideModal(registratieModalSpacer);
 });
 
-aanmeldKnop.addEventListener('click', () => {
-    showModal(aanmeldModalSpacer);
+aanmeldKnoppen.forEach((aanmeldKnop) => {
+    aanmeldKnop.addEventListener('click', () => {
+        showModal(aanmeldModalSpacer);
+    });
 });
 
 aanmeldModal.addEventListener('click', (e) => {

@@ -2,31 +2,13 @@
     $page = 'inschrijven';
     include('includes/header.php');
     include('includes/modals.php');
+    include('includes/hamburger.php');
 ?>
 
-<header class="landing">
-    <div class="logo overlay"><h3>TechnoviumLAN</h3></div>
-    <nav>
-        <ul>
-            <a href="index.php"><li>Home</li></a>
-            <a href="inschrijven.php"><li>Inschrijven</li></a>
-            <a href="huisregels.php"><li>Huisregels</li></a>
-            <a href="contact.php"><li>Contact</li></a>
-        </ul>
-    </nav>
-    <div class="buttons">
-        <ul>
-            <li class="text">
-                <button id="aanmeldKnop">Aanmelden</button>
-            </li>
-            <li class="text">
-                <button class="yellow" id="registratieKnop">
-                    Registreren
-                </button>
-            </li>
-        </ul>
-    </div>
-</header>
+<?php 
+        include('includes/navigation.php');
+?>
+
 <main>
     <section class="introductie-spacer">
         <div class="container">
