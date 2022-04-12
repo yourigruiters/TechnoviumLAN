@@ -11,6 +11,9 @@
             if($page === 'index') {
                 echo '<script src="assets/js/index.js"></script>';
             }
+            if($page === 'huisregels') {
+                echo '<script src="assets/js/accordion.js"></script>';
+            }
         ?>
         <script src="assets/js/modals.js"></script>
     </body>

@@ -570,18 +570,41 @@ main {
     text-align: center;
 }
 
-.huisregels .content {
+.huisregels .accordion {
     max-width: 750px;
     width: 100%;
-    height: auto;
+    height: 60px;
     margin-bottom: 100px;
+    overflow: hidden;
+    transition: all 2s;
 }
 
-.huisregels .content:last-child {
+.huisregels .accordion:last-child {
     margin-bottom: 0px;
 }
 
-.huisregels .content h5 {
+.huisregels .accordion .heading {
+    display: flex;
+    width: 100%;
+    height: 60px;
+}
+
+.huisregels .accordion .heading .heading-titel {
+    width: 75%;
+    height: 60px;
+}
+
+.huisregels .accordion .heading .heading-plusminus {
+    width: 25%;
+    height: 60px;
+}
+
+.huisregels .accordion .content {
+    width: 100%;
+    height: auto;
+}
+
+.huisregels .accordion h5 {
     font-size: 30px;
     font-weight: 700;
     letter-spacing: 2px;
@@ -589,7 +612,7 @@ main {
     margin-bottom: 20px;
 }
 
-.huisregels .content ul {
+.huisregels .accordion ul {
     list-style-type: none;
 }
 
