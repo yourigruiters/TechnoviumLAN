@@ -2,6 +2,7 @@
     $page = 'index';
     include('includes/header.php');
     include('includes/modals.php');
+    include('includes/hamburger.php');
 ?>
 
 <section class="landing-spacer">

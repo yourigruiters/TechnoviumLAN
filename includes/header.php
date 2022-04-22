@@ -12,5 +12,9 @@
             rel="stylesheet"
         />
         <link rel="stylesheet" href="assets/css/styles.css" />
+        <script
+            src="https://kit.fontawesome.com/fb463606a0.js"
+            crossorigin="anonymous"
+        ></script>
     </head>
     <body>
