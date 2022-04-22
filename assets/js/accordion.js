@@ -9,9 +9,9 @@ accordions.forEach((accordion) => {
         const contentHeight = content.offsetHeight;
 
         if (accordion.classList.contains('show')) {
-            accordion.style.height = 60 + 'px';
+            accordion.style.height = 100 + 'px';
         } else {
-            accordion.style.height = 80 + contentHeight + 'px';
+            accordion.style.height = 135 + contentHeight + 'px';
         }
 
         accordion.classList.toggle('show');
