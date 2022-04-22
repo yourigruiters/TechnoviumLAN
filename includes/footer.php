@@ -12,6 +12,9 @@
                 echo '<script src="assets/js/index.js"></script>';
                 echo '<script src="assets/js/header.js"></script>';
             }
+            if($page === 'huisregels') {
+                echo '<script src="assets/js/accordion.js"></script>';
+            }
         ?>
         <script src="assets/js/modals.js"></script>
         <script src="assets/js/hamburger.js"></script>
