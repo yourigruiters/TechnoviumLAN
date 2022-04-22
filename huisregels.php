@@ -61,11 +61,22 @@
                     </div>
                 </div>
                 <div class="accordion">
-                    <h5>Artikel 2: Terrein</h5>
-                    <p class="text">Het terrein, mag alleen betreden en verlaten worden via de toegangspoort. Het betreden van het terrein is op eigen risico. Nooduitgangen dienen alleen voor nood gebruikt te worden!</p>
+                    <div class="heading">
+                        <div class="titel">
+                            <h5>Artikel 2: Terrein</h5>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <p class="text">Het terrein, mag alleen betreden en verlaten worden via de toegangspoort. Het betreden van het terrein is op eigen risico. Nooduitgangen dienen alleen voor nood gebruikt te worden!</p>
+                    </div>
                 </div>
                 <div class="accordion">
-                    <h5>Artikel 3: Openingstijden</h5>
+                    <div class="heading">
+                        <div class="titel">
+                            <h5>Artikel 3: Openingstijden</h5>
+                        </div>
+                    </div>
+
                     <p class="text">De vrijwilligers die opbouwen, kunnen enkele uren voor aanvang aanwezig zijn voor de opbouw. Zij ontvangen hierover bericht van de organisatie. Bezoekers die zich voor openingstijd of na sluitingstijd op het terrein bevinden zullen alsnog worden verwijderd (tenzij de organisatie dit toelaat).</p>
                 </div>
                 <div class="accordion">
