@@ -255,6 +255,7 @@ header .hamburger:hover > i {
 
 header .buttons {
     display: flex;
+    min-width: 250px;
 }
 
 header .buttons ul {

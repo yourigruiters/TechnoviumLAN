@@ -6,20 +6,6 @@
         <li><a href="inschrijven.php">Inschrijven</a></li>
         <li><a href="huisregels.php">Huisregels</a></li>
         <li><a href="contact.php">Contact</a></li>
-        <?php 
-            if(!isset($userID)) {
-        ?>
-        <li>
-            <button class="aanmeldKnop">Aanmelden</button>
-        </li>
-        <li>
-            <button class="yellow registratieKnop">
-                Registreren
-            </button>
-        </li>
-        <?php 
-            } else {
-        ?>
         <li>
             <a href="php/logout.php">
                 <button class="yellow">
@@ -27,8 +13,5 @@
                 </button>
             </a>
         </li>
-        <?php 
-            }
-        ?>
     </ul>
 </div>

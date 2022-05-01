@@ -14,7 +14,7 @@
         <div class="container">
             <div class="introductie">
                 <div class="heading">
-                    <h2 class="title green">Algemeen</h2>
+                    <h2 class="title green">Gebruikers</h2>
                     <p class="subtitle">Lorem ipsum dolor sit amet.</p>
                 </div>
                 <div class="content">
