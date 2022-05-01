@@ -16,10 +16,20 @@
 
                 $_SESSION['userID'] = $result['userID'];
                 $_SESSION['username'] = $result['username'];
+
+                if ($result['admin']) {
     
-                // Melding geven dat gebruiker is aangemaakt
-                header("Location: ../index.php");
-                exit();
+                    // Melding geven dat gebruiker is aangemaakt
+                    header("Location: ../admin/index.php");
+                    exit();
+
+                } else {
+    
+                    // Melding geven dat gebruiker is aangemaakt
+                    header("Location: ../index.php");
+                    exit();
+
+                }
             } else {
                 // Wachtwoord klopt niet
                 header("Location: ../index.php");
