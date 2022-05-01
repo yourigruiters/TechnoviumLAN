@@ -17,26 +17,72 @@
                     <h2 class="title green">Gebruikers</h2>
                     <p class="subtitle">Lorem ipsum dolor sit amet.</p>
                 </div>
-                <div class="content">
-                    <p class="text">
-                        Lorem ipsum dolor sit amet consectetur
-                        adipisicing elit. Sit nostrum minima nihil
-                        dolores adipisci earum eaque excepturi natus
-                        quidem, cumque repellat. Vero possimus unde
-                        asperiores officia quia. Quis excepturi
-                        molestias nulla accusantium veritatis illum,
-                        laborum magnam quae neque, facere inventore
-                        saepe commodi debitis doloremque quod molestiae.
-                        Dolore vel iure officia accusamus similique
-                        maiores fugiat quibusdam. Consectetur, impedit
-                        quasi doloribus voluptate consequatur debitis id
-                        officia omnis soluta eos ab expedita recusandae
-                        unde veniam at esse ipsa sunt aut nemo libero
-                        commodi nihil. Molestias rem cumque facilis
-                        minima nisi, fugiat reprehenderit ipsum est sit.
-                        Laboriosam ipsam!
-                    </p>
+                <div class="options">
+                    <button>Gebruiker toevoegen</button>
                 </div>
+            </div>
+        </div>
+    </section>
+    <section class="table-spacer">
+        <div class="container">
+            <div class="table">
+                <table id="customers">
+                    <tr>
+                        <th>Company</th>
+                        <th>Contact</th>
+                        <th>Country</th>
+                    </tr>
+                    <tr>
+                        <td>Alfreds Futterkiste</td>
+                        <td>Maria Anders</td>
+                        <td>Germany</td>
+                    </tr>
+                    <tr>
+                        <td>Berglunds snabbköp</td>
+                        <td>Christina Berglund</td>
+                        <td>Sweden</td>
+                    </tr>
+                    <tr>
+                        <td>Centro comercial Moctezuma</td>
+                        <td>Francisco Chang</td>
+                        <td>Mexico</td>
+                    </tr>
+                    <tr>
+                        <td>Ernst Handel</td>
+                        <td>Roland Mendel</td>
+                        <td>Austria</td>
+                    </tr>
+                    <tr>
+                        <td>Island Trading</td>
+                        <td>Helen Bennett</td>
+                        <td>UK</td>
+                    </tr>
+                    <tr>
+                        <td>Königlich Essen</td>
+                        <td>Philip Cramer</td>
+                        <td>Germany</td>
+                    </tr>
+                    <tr>
+                        <td>Laughing Bacchus Winecellars</td>
+                        <td>Yoshi Tannamuri</td>
+                        <td>Canada</td>
+                    </tr>
+                    <tr>
+                        <td>Magazzini Alimentari Riuniti</td>
+                        <td>Giovanni Rovelli</td>
+                        <td>Italy</td>
+                    </tr>
+                    <tr>
+                        <td>North/South</td>
+                        <td>Simon Crowther</td>
+                        <td>UK</td>
+                    </tr>
+                    <tr>
+                        <td>Paris spécialités</td>
+                        <td>Marie Bertrand</td>
+                        <td>France</td>
+                    </tr>
+                </table>
             </div>
         </div>
     </section>
