@@ -792,6 +792,10 @@ main {
     margin-bottom: 30px;
 }
 
+.modal .content .intro span {
+    font-weight: bold;
+}
+
 .modal .content form {
     width: 100%;
     height: auto;
@@ -807,6 +811,21 @@ main {
     font-size: 14px;
     border: 1px solid lightslategray;
     outline: none;
+}
+
+.modal .content form .agree {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.modal .content form .agree input {
+    width: 20px;
+    height: 20px;
+    border: 1px solid lightslategray;
+    outline: none;
+    margin-bottom: 0px;
+    margin-right: 10px;
 }
 
 .modal .content form button {
