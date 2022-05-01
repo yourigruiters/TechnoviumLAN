@@ -23,6 +23,11 @@
     <section class="inschrijven-spacer">
         <div class="container">
             <div class="inschrijven">
+                <div class="status">
+                    <div class="alert">
+                        <p>Log a.u.b. in voordat je gaat inschrijven.</p>
+                    </div>
+                </div>
                 <div class="floorplan">
                     <img src="assets/media/floorplan.png" alt="floorplan" />
                 </div>
