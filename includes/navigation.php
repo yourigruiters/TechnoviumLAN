@@ -13,6 +13,9 @@
     </div>
     <div class="buttons">
         <ul>
+            <?php 
+                if(!isset($userID)) {
+            ?>
             <li>
                 <button class="aanmeldKnop">Aanmelden</button>
             </li>
@@ -21,6 +24,19 @@
                     Registreren
                 </button>
             </li>
+            <?php 
+                } else {
+            ?>
+            <li>
+                <a href="php/logout.php">
+                    <button class="yellow">
+                        Uitloggen
+                    </button>
+                </a>
+            </li>
+            <?php 
+                }
+            ?>
         </ul>
     </div>
 </header>
