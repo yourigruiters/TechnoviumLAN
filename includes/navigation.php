@@ -1,5 +1,5 @@
 <header class="landing <?php if($page === 'index') { echo 'homepage'; }?>">
-    <div class="logo overlay"><h3>TechnoviumLAN</h3></div>
+    <div class="logo overlay"><a href="index.php"><h3>TechnoviumLAN</h3></a></div>
     <nav>
         <ul>
             <a href="index.php"><li>Home</li></a>

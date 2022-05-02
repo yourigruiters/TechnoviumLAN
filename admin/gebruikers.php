@@ -150,6 +150,12 @@
                                 }
                             }       
                         }
+                    } else if (isset($_GET['message'])) {
+                        // Message handler
+                        
+                //     <div class="alert">
+                //     <p>Log a.u.b. in voordat je gaat inschrijven.</p>
+                // </div>
                     }
                 ?>
             </div>
