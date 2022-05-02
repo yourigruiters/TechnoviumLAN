@@ -75,6 +75,13 @@
                                     <form action="php/gebruikers.php" method='post'>
                                         <input
                                             type="text"
+                                            name="userID"
+                                            value="<?php echo $user['userID']; ?>"
+                                            required
+                                            readonly
+                                        />
+                                        <input
+                                            type="text"
                                             name="fullname"
                                             value="<?php echo $user['fullname']; ?>"
                                             required
@@ -82,7 +89,7 @@
                                         <input
                                             type="text"
                                             name="username"
-                                            value="<?php echo $user['fullname']; ?>"
+                                            value="<?php echo $user['username']; ?>"
                                             required
                                         />
                                         <button type="submit" name="update" class="update">Aanpassen</button>
@@ -93,26 +100,28 @@
                                 <form action="php/gebruikers.php" method='post'>
                                     <input
                                         type="text"
-                                        name="fullname"
-                                        placeholder="Volledige naam (niet zichtbaar op de website)..."
+                                        name="userID"
+                                        value="<?php echo $user['userID']; ?>"
                                         required
+                                        readonly
                                     />
                                     <input
                                         type="text"
                                         name="username"
-                                        placeholder="Gebruikersnaam (zichtbaar op de website)..."
+                                        value="<?php echo $user['username']; ?>"
                                         required
+                                        readonly
                                     />
                                     <input
                                         type="password"
                                         name="password"
-                                        placeholder="Wachtwoord..."
+                                        placeholder="Nieuw wachtwoord..."
                                         required
                                     />
                                     <input
                                         type="password"
                                         name="passwordRepeat"
-                                        placeholder="Wachtwoord herhalen..."
+                                        placeholder="Nieuw wachtwoord herhalen..."
                                         required
                                     />
                                     <button type="submit" name="password" class="update">Wachtwoord wijzigen</button>
@@ -123,29 +132,19 @@
                                 <form action="php/gebruikers.php" method='post'>
                                     <input
                                         type="text"
-                                        name="fullname"
-                                        placeholder="Volledige naam (niet zichtbaar op de website)..."
+                                        name="userID"
+                                        value="<?php echo $user['userID']; ?>"
                                         required
+                                        readonly
                                     />
                                     <input
                                         type="text"
                                         name="username"
-                                        placeholder="Gebruikersnaam (zichtbaar op de website)..."
+                                        value="<?php echo $user['username']; ?>"
                                         required
+                                        readonly
                                     />
-                                    <input
-                                        type="password"
-                                        name="password"
-                                        placeholder="Wachtwoord..."
-                                        required
-                                    />
-                                    <input
-                                        type="password"
-                                        name="passwordRepeat"
-                                        placeholder="Wachtwoord herhalen..."
-                                        required
-                                    />
-                                    <button type="submit" name="remove" class="remove">Verwijderen</button>
+                                    <button type="submit" name="remove" class="remove">Ik weet het zeker, verwijderen</button>
                                 </form> 
                 <?php 
                                 }

@@ -431,6 +431,11 @@ form input {
     outline: none;
 }
 
+form input:read-only {
+    background-color: var(--darker);
+    color: var(--white);
+}
+
 form .agree {
     display: flex;
     justify-content: flex-start;
