@@ -57,6 +57,13 @@
                                 placeholder="Wachtwoord herhalen..."
                                 required
                             />
+                            <div class="agree">
+                                <input
+                                    type="checkbox"
+                                    name="admin"
+                                />
+                                <p>Administrator account.</p>
+                            </div>
                             <button type="submit" name="add" class="add">Toevoegen</button>
                         </form>
                 <?php 
@@ -92,6 +99,14 @@
                                             value="<?php echo $user['username']; ?>"
                                             required
                                         />
+                                        <div class="agree">
+                                            <input
+                                                type="checkbox"
+                                                name="admin"
+                                                <?php if ($user['admin']) { echo 'checked'; }?>
+                                            />
+                                            <p>Administrator account.</p>
+                                        </div>
                                         <button type="submit" name="update" class="update">Aanpassen</button>
                                     </form>
                 <?php
@@ -124,7 +139,7 @@
                                         placeholder="Nieuw wachtwoord herhalen..."
                                         required
                                     />
-                                    <button type="submit" name="password" class="update">Wachtwoord wijzigen</button>
+                                    <button type="submit" name="passwordUpdate" class="update">Wachtwoord wijzigen</button>
                                 </form>                
                 <?php 
                                 } else {
@@ -156,6 +171,12 @@
                 //     <div class="alert">
                 //     <p>Log a.u.b. in voordat je gaat inschrijven.</p>
                 // </div>
+
+                // matchingpasswords (optional userID)
+                // nametaken
+                // removed
+                // updatedpassword MET userID
+                // updated met userID
                     }
                 ?>
             </div>
