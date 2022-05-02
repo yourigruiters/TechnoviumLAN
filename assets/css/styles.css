@@ -260,6 +260,7 @@ header .hamburger:hover > i {
 
 header .buttons {
     display: flex;
+    justify-content: flex-end;
     min-width: 250px;
 }
 
