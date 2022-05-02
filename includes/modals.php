@@ -8,9 +8,7 @@
             <div class="intro">
                 <h3>Aanmelden</h3>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing
-                    elit. Magni debitis delectus quam nobis illum
-                    dolorum?
+                <span>Melding: </span>Wachtwoord vergeten? In overleg met een admin kun je deze laten wijzigen.
                 </p>
             </div>
             <!-- Moet via AJAX in de toekomst -->
@@ -61,12 +59,6 @@
                     type="text"
                     name="screenname"
                     placeholder="Volledige naam (niet zichtbaar op de website)..."
-                    required
-                />
-                <input
-                    type="text"
-                    name="email"
-                    placeholder="Email..."
                     required
                 />
                 <input

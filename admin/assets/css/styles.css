@@ -654,9 +654,17 @@ table {
     text-align: left;
 }
 
-table td,
 table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: var(--black);
+    color: white;
     padding: 8px;
+}
+
+table td {
+    padding: 8px;
+    font-size: 14px;
 }
 
 table tr:nth-child(odd) {
@@ -671,11 +679,4 @@ table tr:nth-child(even) {
 
 table tr:hover {
     background-color: var(--border);
-}
-
-table th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    background-color: var(--black);
-    color: white;
 }

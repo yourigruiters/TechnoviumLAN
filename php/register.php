@@ -5,10 +5,9 @@
     
             require_once("../includes/connect.php");
 
-            $sql = "SELECT * FROM users WHERE username = :username OR email = :email";
+            $sql = "SELECT * FROM users WHERE username = :username";
             $stmt = $connect->prepare($sql);
             $stmt->bindParam(":username", $_POST['username']);
-            $stmt->bindParam(":email", $_POST['email']);
             $stmt->execute();
             $result = $stmt->fetch();
 
@@ -16,11 +15,10 @@
                 $hashedPW = password_hash($_POST['password'], PASSWORD_DEFAULT);
                 $noAdmin = 0;
 
-                $sql = "INSERT INTO users (username, password, email, admin) VALUES (:username,:password,:email, :admin)";
+                $sql = "INSERT INTO users (username, password, admin) VALUES (:username,:password, :admin)";
                 $stmt = $connect->prepare($sql);
                 $stmt->bindParam(":username", $_POST['username']);
                 $stmt->bindParam(":password", $hashedPW);
-                $stmt->bindParam(":email", $_POST['email']);
                 $stmt->bindParam(":admin", $noAdmin);
                 $stmt->execute();
     
@@ -28,7 +26,7 @@
                 header("Location: ../index.php?bericht=gelukt");
                 exit();
             } else {
-                // Gebruiker bestaat al met naam of email
+                // Gebruiker bestaat al met naam
                 header("Location: ../index.php");
                 exit();
             }
