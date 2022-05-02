@@ -797,13 +797,14 @@ main {
     font-weight: bold;
 }
 
-.modal .content form {
+/* Form */
+form {
     width: 100%;
     height: auto;
     margin-bottom: 15px;
 }
 
-.modal .content form input {
+form input {
     width: 100%;
     height: 40px;
     margin-bottom: 15px;
@@ -814,13 +815,13 @@ main {
     outline: none;
 }
 
-.modal .content form .agree {
+form .agree {
     display: flex;
     justify-content: flex-start;
     align-items: center;
 }
 
-.modal .content form .agree input {
+form .agree input {
     width: 20px;
     height: 20px;
     border: 1px solid lightslategray;
@@ -829,7 +830,7 @@ main {
     margin-right: 10px;
 }
 
-.modal .content form button {
+form button {
     width: 100%;
     height: auto;
     padding: 10px 0px 9px;
@@ -845,11 +846,11 @@ main {
     cursor: pointer;
 }
 
-.modal.aanmelden .content form button {
+.content form button {
     background-color: var(--green);
 }
 
-.modal .content form button:hover {
+form button:hover {
     background-color: var(--white);
 }
 
