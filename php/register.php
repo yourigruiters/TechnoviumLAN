@@ -1,6 +1,5 @@
 <?php
-    if (isset($_POST['registreer'])) {
-
+    if (isset($_POST['registreer']) && isset($_POST['agree'])) {
         if ($_POST['password'] === $_POST['passwordRepeat']) {
     
             require_once("../includes/connect.php");
