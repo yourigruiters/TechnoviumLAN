@@ -23,18 +23,23 @@
             </div>
         </div>
     </section>
+    <!-- SECTION FOR ADD/UPDATE/DELETE -->
     <section class="table-spacer">
         <div class="container">
             <div class="table">
                 <table>
                     <tr>
-                        <th>Company</th>
-                        <th>Contact</th>
-                        <th>Country</th>
+                        <th>Admin</th>
+                        <th>Volledige naam</th>
+                        <th>Gebruikersnaam</th>
+                        <th>Aanpassen</th>
+                        <th>Verwijderen</th>
                     </tr>
                     <tr>
-                        <td>Alfreds Futterkiste</td>
-                        <td>Maria Anders</td>
+                        <td>Ja</td>
+                        <td>Youri Gruiters</td>
+                        <td>Youri</td>
+                        <td>Germany</td>
                         <td>Germany</td>
                     </tr>
                 </table>

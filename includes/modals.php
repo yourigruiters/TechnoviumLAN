@@ -51,14 +51,14 @@
             <form action="php/register.php" method='post'>
                 <input
                     type="text"
-                    name="username"
-                    placeholder="Gebruikersnaam (zichtbaar op de website)..."
+                    name="fullname"
+                    placeholder="Volledige naam (niet zichtbaar op de website)..."
                     required
                 />
                 <input
                     type="text"
-                    name="screenname"
-                    placeholder="Volledige naam (niet zichtbaar op de website)..."
+                    name="username"
+                    placeholder="Gebruikersnaam (zichtbaar op de website)..."
                     required
                 />
                 <input

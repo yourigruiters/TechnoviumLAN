@@ -15,8 +15,9 @@
                 $hashedPW = password_hash($_POST['password'], PASSWORD_DEFAULT);
                 $noAdmin = 0;
 
-                $sql = "INSERT INTO users (username, password, admin) VALUES (:username,:password, :admin)";
+                $sql = "INSERT INTO users (fullname, username, password, admin) VALUES (:fullname, :username,:password, :admin)";
                 $stmt = $connect->prepare($sql);
+                $stmt->bindParam(":fullname", $_POST['fullname']);
                 $stmt->bindParam(":username", $_POST['username']);
                 $stmt->bindParam(":password", $hashedPW);
                 $stmt->bindParam(":admin", $noAdmin);
