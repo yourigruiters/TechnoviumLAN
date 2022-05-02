@@ -14,12 +14,14 @@
 
             if(!$result) {
                 $hashedPW = password_hash($_POST['password'], PASSWORD_DEFAULT);
-        
-                $sql = "INSERT INTO users (username, password, email) VALUES (:username,:password,:email)";
+                $noAdmin = 0;
+
+                $sql = "INSERT INTO users (username, password, email, admin) VALUES (:username,:password,:email, :admin)";
                 $stmt = $connect->prepare($sql);
                 $stmt->bindParam(":username", $_POST['username']);
                 $stmt->bindParam(":password", $hashedPW);
                 $stmt->bindParam(":email", $_POST['email']);
+                $stmt->bindParam(":admin", $noAdmin);
                 $stmt->execute();
     
                 // Melding geven dat gebruiker is aangemaakt

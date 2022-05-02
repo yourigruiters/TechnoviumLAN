@@ -26,7 +26,7 @@
     <section class="table-spacer">
         <div class="container">
             <div class="table">
-                <table id="customers">
+                <table>
                     <tr>
                         <th>Company</th>
                         <th>Contact</th>
