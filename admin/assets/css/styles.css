@@ -334,6 +334,7 @@ main {
     justify-content: center;
     width: 100%;
     height: auto;
+    margin-bottom: 65px;
 }
 
 .introductie {
@@ -402,7 +403,6 @@ main {
     justify-content: center;
     width: 100%;
     height: auto;
-    margin-top: 65px;
 }
 
 .forms {
@@ -723,6 +723,13 @@ footer h6 {
 }
 
 /* Alert */
+.alert-container {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    margin-top: 50px;
+}
+
 .alert {
     display: flex;
     justify-content: center;

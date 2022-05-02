@@ -21,6 +21,48 @@
                 <div class="options">
                     <a href="gebruikers.php?type=add"><button>Gebruiker toevoegen</button></a>
                 </div>
+                <?php 
+                    if (isset($_GET['message'])) {
+                        $message = '';
+
+                        switch ($_GET['message']) {
+                            case 'created':
+                                $message = 'Nieuwe gebruiker is toegevoegd.';
+                                break;
+                            case 'updated':
+                                $message = 'Gebruiker is aangepast.';
+                                break;
+                            case 'updatedpassword':
+                                $message = 'Wachtwoord van gebruiker is aangepast.';
+                                break;
+                            case 'removed':
+                                $message = 'Gebruiker is verwijderd.';
+                                break;
+                            case 'nametaken':
+                                $message = 'De ingevoerde gebruikersnaam wordt al gebruikt.';
+                                break;
+                            case 'matchingpasswords':
+                                $message = 'De ingevoerde wachtwoorden waren niet gelijk aan elkaar.';
+                                break;
+                            default: 
+                                $message = 'Er gaat iets fout bij het behandelen van een error';
+                                break;
+                        }
+
+                    // matchingpasswords (optional userID)
+                    // nametaken
+                    // removed
+                    // updatedpassword MET userID
+                    // updated met userID
+                ?>
+                    <div class="alert-container">
+                        <div class="alert">
+                            <p><?php echo $message; ?></p>
+                        </div>
+                    </div>
+                <?php 
+                    }
+                ?>
             </div>
         </div>
     </section>
@@ -165,18 +207,6 @@
                                 }
                             }       
                         }
-                    } else if (isset($_GET['message'])) {
-                        // Message handler
-                        
-                //     <div class="alert">
-                //     <p>Log a.u.b. in voordat je gaat inschrijven.</p>
-                // </div>
-
-                // matchingpasswords (optional userID)
-                // nametaken
-                // removed
-                // updatedpassword MET userID
-                // updated met userID
                     }
                 ?>
             </div>

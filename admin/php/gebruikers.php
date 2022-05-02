@@ -56,7 +56,7 @@
         $stmt->execute();
 
         // Melding geven dat gebruiker is aangepast
-        header("Location: ../gebruikers.php?message=updated&userID=".$_POST['userID']);
+        header("Location: ../gebruikers.php?message=updated");
         exit();
     } else if (isset($_POST['passwordUpdate'])) {
         if ($_POST['password'] === $_POST['passwordRepeat']) {
@@ -69,11 +69,11 @@
             $stmt->execute();
 
             // Melding geven dat wachtwoord is aangepast
-            header("Location: ../gebruikers.php?message=updatedpassword&userID=".$_POST['userID']);
+            header("Location: ../gebruikers.php?message=updatedpassword");
             exit();
         } else {
             // Wachtwoorden niet gelijk
-            header("Location: ../gebruikers.php?message=matchingpasswords&userID=".$_POST['userID']);
+            header("Location: ../gebruikers.php?message=matchingpasswords");
             exit();
         }
     } else if (isset($_POST['remove'])) {
