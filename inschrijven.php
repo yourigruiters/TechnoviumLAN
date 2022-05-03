@@ -12,12 +12,14 @@
     $likeDatum = "%".date("Y")."%";
     $id = 1;
 
-    $sql = "SELECT plaatsen FROM algemeen WHERE ID = :ID";
+    $sql = "SELECT * FROM algemeen WHERE ID = :ID";
     $stmt = $connect->prepare($sql);
     $stmt->bindParam(':ID', $id);
     $stmt->execute();
     $algemeenData = $stmt->fetch();
     $plaatsen = $algemeenData['plaatsen'];
+    $startdatum = $algemeenData['startdatum'];
+    $einddatum = $algemeenData['einddatum'];
 ?>
 
 <main>
@@ -30,7 +32,17 @@
                 </div>
                 <div class="options">
                     <?php 
-                        if(isset($userID)) {
+                        $currentData = date('Y-m-d');
+
+                        if(!($currentData >= $startdatum) || !($currentData <= $einddatum)) {
+                    ?>
+                        <div class="alert-container">
+                            <div class="alert">
+                                <p>De periode om je in te schrijven is nog niet gestart of verlopen, je kunt je inschrijven tussen <?php echo $startdatum; ?> en <?php echo $einddatum; ?>.</p>
+                            </div>
+                        </div>
+                    <?php
+                        } else if (isset($userID)) {
                             $sql = "SELECT * FROM inschrijvingen WHERE userID = :userID AND datum LIKE :datum";
                             $stmt = $connect->prepare($sql);
                             $stmt->bindParam(':userID', $userID);
@@ -254,7 +266,7 @@
                         if (!$count) {
                     ?> 
                         <tr>
-                            <td colspan="5">Geen gebruikers gevonden</td>
+                            <td colspan="5">Geen inschrijvingen gevonden</td>
                         </tr>
                     <?php
                         } else {

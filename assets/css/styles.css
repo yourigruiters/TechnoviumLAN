@@ -1162,6 +1162,12 @@ footer h6 {
 }
 
 /* Alert */
+.alert-container {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+}
+
 .alert {
     display: flex;
     justify-content: center;
