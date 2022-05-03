@@ -16,7 +16,7 @@
             <div class="introductie">
                 <div class="heading">
                     <h2 class="title green">Gebruikers</h2>
-                    <p class="subtitle">Lorem ipsum dolor sit amet.</p>
+                    <p class="subtitle">Beheer van (alle) gebruikers</p>
                 </div>
                 <div class="options">
                     <a href="gebruikers.php?type=add"><button>Gebruiker toevoegen</button></a>
