@@ -10,6 +10,14 @@
 <?php 
     include('includes/navigation.php');
     $likeDatum = "%".date("Y")."%";
+    $id = 1;
+
+    $sql = "SELECT plaatsen FROM algemeen WHERE ID = :ID";
+    $stmt = $connect->prepare($sql);
+    $stmt->bindParam(':ID', $id);
+    $stmt->execute();
+    $algemeenData = $stmt->fetch();
+    $plaatsen = $algemeenData['plaatsen'];
 ?>
 
 <main>
@@ -72,7 +80,7 @@
                                 $results = $stmt->fetchAll(PDO::FETCH_COLUMN);
 
                                 $count = 1;
-                                while ($count < 69) {
+                                while ($count <= $plaatsen) {
                                     if (!in_array($count, $results)) {
                                         echo "<option value='".$count."'>".$count."</option>";
                                     }
@@ -126,7 +134,7 @@
                                                 $results = $stmt->fetchAll(PDO::FETCH_COLUMN);
 
                                                 $count = 1;
-                                                while ($count < 69) {
+                                                while ($count <= $plaatsen) {
                                                     if ($count === $user['tafelnummer']) {
                                                         echo "<option value='".$count."' selected>".$count."</option>";
                                                     } else if (!in_array($count, $results)) {
