@@ -206,7 +206,6 @@
                         <th>Uitschrijven</th>
                     </tr>
                     <?php
-
                         $sql = "SELECT users.fullname, users.username, inschrijvingen.inschrijfID, inschrijvingen.tafelnummer, inschrijvingen.datum, inschrijvingen.betaald FROM users INNER JOIN inschrijvingen ON users.userID = inschrijvingen.userID WHERE inschrijvingen.datum LIKE :datum ORDER BY inschrijvingen.tafelnummer ASC";
                         $stmt = $connect->prepare($sql);
                         $stmt->bindParam(':datum', $likeDatum);
