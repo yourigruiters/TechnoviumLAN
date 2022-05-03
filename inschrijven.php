@@ -9,6 +9,7 @@
 
 <?php 
     include('includes/navigation.php');
+    $likeDatum = "%".date("Y")."%";
 ?>
 
 <main>
@@ -20,7 +21,28 @@
                     <p class="subtitle">Lorem ipsum dolor sit amet.</p>
                 </div>
                 <div class="options">
-                    <a href="inschrijven.php?type=add"><button>Inschrijven</button></a>
+                    <?php 
+                        if(isset($userID)) {
+                            $sql = "SELECT * FROM inschrijvingen WHERE userID = :userID AND datum LIKE :datum";
+                            $stmt = $connect->prepare($sql);
+                            $stmt->bindParam(':userID', $userID);
+                            $stmt->bindParam(':datum', $likeDatum);
+                            $stmt->execute();
+                            $user = $stmt->fetch();
+                            $count = $stmt->rowCount();
+
+                            if ($count) {
+                    ?>
+                                <a href="inschrijven.php?type=update"><button class="update">Inschrijving aanpassen</button></a>
+                                <a href="inschrijven.php?type=remove"><button class="remove">Uitschrijven</button></a>
+                    <?php                                
+                            } else {
+                    ?>
+                                <a href="inschrijven.php?type=add"><button>Inschrijven</button></a>
+                    <?php
+                            }
+                        }
+                    ?>
                 </div>
             </div>
         </div>
@@ -29,16 +51,16 @@
         <div class="container">
             <div class="forms inschrijven-form">
                 <?php 
-                    if (isset($_GET['type'])) {
+                    if (isset($_GET['type']) && isset($userID)) {
                         if ($_GET['type'] === 'add') {
-
                 ?>
-                    <form action="php/inschrijvingen.php" method='post'>
+                    <form action="php/inschrijven.php" method='post'>
                         <input
                             type="text"
-                            name="username"
-                            placeholder="Gebruikersnaam..."
+                            name="userID"
+                            value="<?php echo $userID; ?> - (Jouw persoonlijke ID)"
                             required
+                            readonly
                         />
                         <select name="tafelnummer" required>
                             <option selected disabled>Kies een tafel...</option>
@@ -61,9 +83,10 @@
                         <div class="agree">
                             <input
                                 type="checkbox"
-                                name="betaald"
+                                name="agree"
+                                required
                             />
-                            <p>Gebruiker heeft betaald.</p>
+                            <p>Ik probeer z.s.m. te betalen.</p>
                         </div>
                         <button type="submit" name="add" class="add">Toevoegen</button>
                     </form>
@@ -71,7 +94,7 @@
                         } else if ($_GET['type'] === 'update' || $_GET['type'] === 'remove') {
                             $sql = "SELECT users.fullname, users.username, inschrijvingen.inschrijfID, inschrijvingen.tafelnummer, inschrijvingen.betaald FROM users INNER JOIN inschrijvingen ON users.userID = inschrijvingen.userID WHERE inschrijvingen.inschrijfID LIKE :inschrijfID";
                             $stmt = $connect->prepare($sql);
-                            $stmt->bindParam(':inschrijfID', $_GET['inschrijving']);
+                            $stmt->bindParam(':inschrijfID', $user['inschrijfID']);
                             $stmt->execute();
                             $user = $stmt->fetch();
                             $count = $stmt->rowCount();
@@ -79,18 +102,11 @@
                             if($count) {
                                 if ($_GET['type'] === 'update') {
                 ?>
-                                    <form action="php/inschrijvingen.php" method='post'>
+                                    <form action="php/inschrijven.php" method='post'>
                                         <input
                                             type="text"
                                             name="inschrijfID"
-                                            value="<?php echo $user['inschrijfID']; ?> - (Database ID)"
-                                            required
-                                            readonly
-                                        />
-                                        <input
-                                            type="text"
-                                            name="fullname"
-                                            value="<?php echo $user['fullname']; ?>"
+                                            value="<?php echo $user['inschrijfID']; ?> - (Jouw inschrijving ID)"
                                             required
                                             readonly
                                         />
@@ -120,24 +136,16 @@
                                                 }
                                             ?>
                                         </select>
-                                        <div class="agree">
-                                            <input
-                                                type="checkbox"
-                                                name="betaald"
-                                                <?php if ($user['betaald']) { echo 'checked'; }?>
-                                            />
-                                            <p>Gebruiker heeft betaald.</p>
-                                        </div>
                                         <button type="submit" name="update" class="update">Aanpassen</button>
                                     </form>
                 <?php
                                 } else {
                 ?> 
-                                <form action="php/inschrijvingen.php" method='post'>
+                                <form action="php/inschrijven.php" method='post'>
                                     <input
                                         type="text"
                                         name="inschrijfID"
-                                        value="<?php echo $user['inschrijfID']; ?> - (Database ID)"
+                                        value="<?php echo $user['inschrijfID']; ?> - (Jouw inschrijving ID)"
                                         required
                                         readonly
                                     />
@@ -171,11 +179,32 @@
                             case 'created':
                                 $message = 'Je account is aangemaakt, je bent ook direct ingelogd.';
                                 break;
+                            case 'createdinschrijving':
+                                $message = 'Je inschrijving is voltooid.';
+                                break;
+                            case 'updated':
+                                $message = 'Je inschrijving is aangepast.';
+                                break;
+                            case 'removed':
+                                $message = 'Je inschrijving is verwijderd.';
+                                break;
+                            case 'loggedin':
+                                $message = 'Je bent nu ingelogd.';
+                                break;
                             case 'nametaken':
                                 $message = 'De ingevoerde gebruikersnaam wordt al gebruikt.';
                                 break;
+                            case 'namenotfound':
+                                $message = 'De ingevoerde gebruikersnaam is niet bekend.';
+                                break;
+                            case 'tableinuse':
+                                $message = 'De gekozen tafel is al in gebruik.';
+                                break;
                             case 'matchingpasswords':
                                 $message = 'De ingevoerde wachtwoorden waren niet gelijk aan elkaar.';
+                                break;
+                            case 'wrongpassword':
+                                $message = 'Het ingevoerde wachtwoord is niet correct voor deze gebruiker.';
                                 break;
                             default: 
                                 $message = 'Er gaat iets fout bij het behandelen van een error';
@@ -207,8 +236,6 @@
                         <th>Betaald</th>
                     </tr>
                     <?php
-                        $likeDatum = "%".date("Y")."%";
-
                         $sql = "SELECT users.fullname, users.username, inschrijvingen.inschrijfID, inschrijvingen.tafelnummer, inschrijvingen.datum, inschrijvingen.betaald FROM users INNER JOIN inschrijvingen ON users.userID = inschrijvingen.userID WHERE inschrijvingen.datum LIKE :datum ORDER BY inschrijvingen.tafelnummer ASC";
                         $stmt = $connect->prepare($sql);
                         $stmt->bindParam(':datum', $likeDatum);

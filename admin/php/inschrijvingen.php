@@ -45,16 +45,9 @@
             exit();
         }
     } else if (isset($_POST['update'])) {
-        $betaald = 0;
-
-        if (isset($_POST['betaald'])) {
-            $betaald = 1;
-        }
-
-        $sql = "UPDATE inschrijvingen SET tafelnummer = :tafelnummer, betaald = :betaald WHERE inschrijfID = :inschrijfID";
+        $sql = "UPDATE inschrijvingen SET tafelnummer = :tafelnummer WHERE inschrijfID = :inschrijfID";
         $stmt = $connect->prepare($sql);
         $stmt->bindParam(":tafelnummer", $_POST['tafelnummer']);
-        $stmt->bindParam(":betaald", $betaald);
         $stmt->bindParam(":inschrijfID", $_POST['inschrijfID']);
         $stmt->execute();
 

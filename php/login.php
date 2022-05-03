@@ -26,18 +26,18 @@
                 } else {
     
                     // Melding geven dat gebruiker is aangemaakt
-                    header("Location: ../index.php");
+                    header("Location: ../inschrijven.php?message=loggedin");
                     exit();
 
                 }
             } else {
                 // Wachtwoord klopt niet
-                header("Location: ../index.php");
+                header("Location: ../inschrijven.php?message=wrongpassword");
                 exit();
             }
         } else {
             // Gebruiker bestaat niet met deze username
-            header("Location: ../index.php");
+            header("Location: ../inschrijven.php?message=namenotfound");
             exit();
         }
     } else {
