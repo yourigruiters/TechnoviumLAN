@@ -25,7 +25,7 @@
 
                         switch ($_GET['message']) {
                             case 'updated':
-                                $message = 'Inschrijving is aangepast.';
+                                $message = 'De data is aangepast.';
                                 break;
                             default: 
                                 $message = 'Er gaat iets fout bij het behandelen van een error';
@@ -47,37 +47,40 @@
         <div class="container">
             <div class="forms">
                 <?php 
+                    $id = 1;
+                    $sql = "SELECT * FROM algemeen WHERE ID = :ID";
+                    $stmt = $connect->prepare($sql);
+                    $stmt->bindParam(':ID', $id);
+                    $stmt->execute();
+                    $user = $stmt->fetch();
+                    $count = $stmt->rowCount();
+
                     if (isset($_GET['type'])) {
                         if ($_GET['type'] === 'update') {
-                            $sql = "SELECT users.fullname, users.username, inschrijvingen.inschrijfID, inschrijvingen.tafelnummer, inschrijvingen.betaald FROM users INNER JOIN inschrijvingen ON users.userID = inschrijvingen.userID WHERE inschrijvingen.inschrijfID LIKE :inschrijfID";
-                            $stmt = $connect->prepare($sql);
-                            $stmt->bindParam(':inschrijfID', $_GET['inschrijving']);
-                            $stmt->execute();
-                            $user = $stmt->fetch();
-                            $count = $stmt->rowCount();
-
                             if($count) {
-                                if ($_GET['type'] === 'update') {
                 ?>
-                                    <form action="php/inschrijvingen.php" method='post'>
-                                        <input
-                                            type="text"
-                                            name="inschrijfID"
-                                            value="<?php echo $user['inschrijfID']; ?> - (Database ID)"
-                                            required
-                                            readonly
-                                        />
-                                        <input
-                                            type="text"
-                                            name="fullname"
-                                            value="<?php echo $user['fullname']; ?>"
-                                            required
-                                            readonly
-                                        />
-                                        <button type="submit" name="update" class="update">Aanpassen</button>
-                                    </form>
+                                <form action="php/algemeen.php" method='post'>
+                                    <input
+                                        type="text"
+                                        name="plaatsen"
+                                        value="<?php echo $user['plaatsen']; ?>"
+                                        required
+                                    />
+                                    <input
+                                        type="date"
+                                        name="startdatum"
+                                        value="<?php echo $user['startdatum']; ?>"
+                                        required
+                                    />
+                                    <input
+                                        type="date"
+                                        name="einddatum"
+                                        value="<?php echo $user['einddatum']; ?>"
+                                        required
+                                    />
+                                    <button type="submit" name="update" class="update">Aanpassen</button>
+                                </form>
                 <?php
-                                }
                             }       
                         }
                     }
@@ -90,44 +93,27 @@
             <div class="table">
                 <table>
                     <tr>
-                        <th>Nummer</th>
-                        <th>Volledige naam</th>
-                        <th>Gebruikersnaam</th>
-                        <th>Ingeschreven op</th>
-                        <th>Betaald</th>
+                        <th>Aantal plaatsen</th>
+                        <th>Start inschrijvingen</th>
+                        <th>Einde inschrijvingen</th>
                         <th>Aanpassen</th>
-                        <th>Uitschrijven</th>
                     </tr>
                     <?php
-
-                        $sql = "SELECT users.fullname, users.username, inschrijvingen.inschrijfID, inschrijvingen.tafelnummer, inschrijvingen.datum, inschrijvingen.betaald FROM users INNER JOIN inschrijvingen ON users.userID = inschrijvingen.userID WHERE inschrijvingen.datum LIKE :datum ORDER BY inschrijvingen.tafelnummer ASC";
-                        $stmt = $connect->prepare($sql);
-                        $stmt->bindParam(':datum', $likeDatum);
-                        $stmt->execute();
-                        $result = $stmt->fetchAll();
-                        $count = $stmt->rowCount();
-
                         if (!$count) {
                     ?> 
                         <tr>
-                            <td colspan="7">Geen gebruikers gevonden</td>
+                            <td colspan="4">Geen data gevonden</td>
                         </tr>
                     <?php
                         } else {
-                            foreach($result as $user) {
                     ?> 
                             <tr>
-                                <td><?php echo $user['tafelnummer']; ?></td>
-                                <td><?php echo $user['fullname']; ?></td>
-                                <td><?php echo $user['username']; ?></td>
-                                <td><?php echo $user['datum']; ?></td>
-                                <td><?php if($user['betaald']) {echo 'ja';} else {echo 'nee';} ?></td>
-                                <td><a href="inschrijvingen.php?type=update&inschrijving=<?php echo $user['inschrijfID']; ?>">Aanpassen</a></td>
-                                <td><a href="inschrijvingen.php?type=remove&inschrijving=<?php echo $user['inschrijfID']; ?>" class="remove">Verwijderen</a></td>
+                                <td><?php echo $user['plaatsen']; ?></td>
+                                <td><?php echo $user['startdatum']; ?></td>
+                                <td><?php echo $user['einddatum']; ?></td>
+                                <td><a href="index.php?type=update">Aanpassen</a></td>
                             </tr>
                     <?php
-                                
-                            }
                         }
                     ?>
                 </table>
