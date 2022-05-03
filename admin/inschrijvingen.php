@@ -28,22 +28,19 @@
 
                         switch ($_GET['message']) {
                             case 'created':
-                                $message = 'Nieuwe gebruiker is toegevoegd.';
+                                $message = 'Nieuwe inschrijving is toegevoegd.';
                                 break;
                             case 'updated':
-                                $message = 'Gebruiker is aangepast.';
-                                break;
-                            case 'updatedpassword':
-                                $message = 'Wachtwoord van gebruiker is aangepast.';
+                                $message = 'Inschrijving is aangepast.';
                                 break;
                             case 'removed':
-                                $message = 'Gebruiker is verwijderd.';
+                                $message = 'Inschrijving is verwijderd.';
                                 break;
-                            case 'nametaken':
-                                $message = 'De ingevoerde gebruikersnaam wordt al gebruikt.';
+                            case 'tableinuse':
+                                $message = 'De gekozen tafel is al in gebruik.';
                                 break;
-                            case 'matchingpasswords':
-                                $message = 'De ingevoerde wachtwoorden waren niet gelijk aan elkaar.';
+                            case 'namenotfound':
+                                $message = 'De ingevoerde gebruikersnaam bestaat niet.';
                                 break;
                             default: 
                                 $message = 'Er gaat iets fout bij het behandelen van een error';
@@ -101,26 +98,25 @@
                                 />
                                 <p>Gebruiker heeft betaald.</p>
                             </div>
-                            <button type="submit" name="add" class="add">Inschrijving toevoegen</button>
+                            <button type="submit" name="add" class="add">Toevoegen</button>
                         </form>
                 <?php 
-                        } else if ($_GET['type'] === 'update' || $_GET['type'] === 'remove' || $_GET['type'] === 'password') {
-                            $sql = "SELECT inschrijfID, tafelnummer, username, admin FROM users WHERE userID = :userID";
+                        } else if ($_GET['type'] === 'update' || $_GET['type'] === 'remove') {
+                            $sql = "SELECT users.fullname, users.username, inschrijvingen.inschrijfID, inschrijvingen.tafelnummer, inschrijvingen.betaald FROM users INNER JOIN inschrijvingen ON users.userID = inschrijvingen.userID WHERE inschrijvingen.inschrijfID LIKE :inschrijfID";
                             $stmt = $connect->prepare($sql);
-                            $stmt->bindParam(':userID', $_GET['inschrijving']);
+                            $stmt->bindParam(':inschrijfID', $_GET['inschrijving']);
                             $stmt->execute();
                             $user = $stmt->fetch();
                             $count = $stmt->rowCount();
 
                             if($count) {
                                 if ($_GET['type'] === 'update') {
-
                 ?>
                                     <form action="php/inschrijvingen.php" method='post'>
                                         <input
                                             type="text"
-                                            name="userID"
-                                            value="<?php echo $user['userID']; ?>"
+                                            name="inschrijfID"
+                                            value="<?php echo $user['inschrijfID']; ?> - (Database ID)"
                                             required
                                             readonly
                                         />
@@ -129,20 +125,41 @@
                                             name="fullname"
                                             value="<?php echo $user['fullname']; ?>"
                                             required
+                                            readonly
                                         />
                                         <input
                                             type="text"
                                             name="username"
                                             value="<?php echo $user['username']; ?>"
                                             required
+                                            readonly
                                         />
+                                        <select name="tafelnummer" required>
+                                            <?php 
+                                                $sql = "SELECT tafelnummer FROM inschrijvingen WHERE datum LIKE :datum ORDER BY tafelnummer ASC";
+                                                $stmt = $connect->prepare($sql);
+                                                $stmt->bindParam(':datum', $likeDatum);
+                                                $stmt->execute();
+                                                $results = $stmt->fetchAll(PDO::FETCH_COLUMN);
+
+                                                $count = 1;
+                                                while ($count < 69) {
+                                                    if ($count === $user['tafelnummer']) {
+                                                        echo "<option value='".$count."' selected>".$count."</option>";
+                                                    } else if (!in_array($count, $results)) {
+                                                        echo "<option value='".$count."'>".$count."</option>";
+                                                    }
+                                                    $count++;
+                                                }
+                                            ?>
+                                        </select>
                                         <div class="agree">
                                             <input
                                                 type="checkbox"
-                                                name="admin"
-                                                <?php if ($user['admin']) { echo 'checked'; }?>
+                                                name="betaald"
+                                                <?php if ($user['betaald']) { echo 'checked'; }?>
                                             />
-                                            <p>Administrator account.</p>
+                                            <p>Gebruiker heeft betaald.</p>
                                         </div>
                                         <button type="submit" name="update" class="update">Aanpassen</button>
                                     </form>
@@ -152,8 +169,8 @@
                                 <form action="php/inschrijvingen.php" method='post'>
                                     <input
                                         type="text"
-                                        name="userID"
-                                        value="<?php echo $user['userID']; ?>"
+                                        name="inschrijfID"
+                                        value="<?php echo $user['inschrijfID']; ?> - (Database ID)"
                                         required
                                         readonly
                                     />

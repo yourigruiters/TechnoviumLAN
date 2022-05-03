@@ -100,7 +100,7 @@
                                 />
                                 <p>Administrator account.</p>
                             </div>
-                            <button type="submit" name="add" class="add">Gebruiker toevoegen</button>
+                            <button type="submit" name="add" class="add">Toevoegen</button>
                         </form>
                 <?php 
                         } else if ($_GET['type'] === 'update' || $_GET['type'] === 'remove' || $_GET['type'] === 'password') {
@@ -119,7 +119,7 @@
                                         <input
                                             type="text"
                                             name="userID"
-                                            value="<?php echo $user['userID']; ?>"
+                                            value="<?php echo $user['userID']; ?> - (Database ID)"
                                             required
                                             readonly
                                         />
@@ -152,7 +152,7 @@
                                     <input
                                         type="text"
                                         name="userID"
-                                        value="<?php echo $user['userID']; ?>"
+                                        value="<?php echo $user['userID']; ?> - (Database ID)"
                                         required
                                         readonly
                                     />
@@ -184,7 +184,7 @@
                                     <input
                                         type="text"
                                         name="userID"
-                                        value="<?php echo $user['userID']; ?>"
+                                        value="<?php echo $user['userID']; ?> - (Database ID)"
                                         required
                                         readonly
                                     />
