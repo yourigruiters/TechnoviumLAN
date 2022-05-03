@@ -48,12 +48,6 @@
                                 $message = 'Er gaat iets fout bij het behandelen van een error';
                                 break;
                         }
-
-                    // matchingpasswords (optional userID)
-                    // nametaken
-                    // removed
-                    // updatedpassword MET userID
-                    // updated met userID
                 ?>
                     <div class="alert-container">
                         <div class="alert">
@@ -106,7 +100,7 @@
                                 />
                                 <p>Administrator account.</p>
                             </div>
-                            <button type="submit" name="add" class="add">Toevoegen</button>
+                            <button type="submit" name="add" class="add">Gebruiker toevoegen</button>
                         </form>
                 <?php 
                         } else if ($_GET['type'] === 'update' || $_GET['type'] === 'remove' || $_GET['type'] === 'password') {
