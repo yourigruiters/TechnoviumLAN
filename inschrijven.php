@@ -194,6 +194,52 @@
                 </div>
             </div>
         </div>
+    </section>    
+    <section class="table-spacer">
+        <div class="container">
+            <div class="table">
+                <table>
+                    <tr>
+                        <th>Tafelnummer</th>
+                        <th>Volledige naam</th>
+                        <th>Gebruikersnaam</th>
+                        <th>Ingeschreven op</th>
+                        <th>Betaald</th>
+                    </tr>
+                    <?php
+                        $likeDatum = "%".date("Y")."%";
+
+                        $sql = "SELECT users.fullname, users.username, inschrijvingen.inschrijfID, inschrijvingen.tafelnummer, inschrijvingen.datum, inschrijvingen.betaald FROM users INNER JOIN inschrijvingen ON users.userID = inschrijvingen.userID WHERE inschrijvingen.datum LIKE :datum ORDER BY inschrijvingen.tafelnummer ASC";
+                        $stmt = $connect->prepare($sql);
+                        $stmt->bindParam(':datum', $likeDatum);
+                        $stmt->execute();
+                        $result = $stmt->fetchAll();
+                        $count = $stmt->rowCount();
+
+                        if (!$count) {
+                    ?> 
+                        <tr>
+                            <td colspan="5">Geen gebruikers gevonden</td>
+                        </tr>
+                    <?php
+                        } else {
+                            foreach($result as $user) {
+                    ?> 
+                            <tr>
+                                <td><?php echo $user['tafelnummer']; ?></td>
+                                <td><?php echo $user['fullname']; ?></td>
+                                <td><?php echo $user['username']; ?></td>
+                                <td><?php echo $user['datum']; ?></td>
+                                <td><?php if($user['betaald']) {echo 'ja';} else {echo 'nee';} ?></td>
+                            </tr>
+                    <?php
+                                
+                            }
+                        }
+                    ?>
+                </table>
+            </div>
+        </div>
     </section>
 </main>
 

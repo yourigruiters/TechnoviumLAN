@@ -634,6 +634,24 @@ main {
     height: auto;
 }
 
+/* Table spacer */
+.table-spacer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    margin-top: 65px;
+}
+
+.table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
 /* Huisregels */
 .huisregels-spacer {
     display: flex;
@@ -1161,4 +1179,53 @@ footer h6 {
 
 .alert p {
     color: var(--black) !important;
+}
+
+/* Table */
+table {
+    width: 100%;
+    height: auto;
+    text-align: left;
+}
+
+table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: var(--black);
+    color: white;
+    padding: 8px;
+}
+
+table td {
+    padding: 8px;
+    font-size: 14px;
+}
+
+table tr:nth-child(odd) {
+    background-color: #383838;
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background-color: #626262;
+    color: white;
+}
+
+table tr:hover {
+    background-color: var(--border);
+}
+
+table a {
+    text-decoration: none;
+    color: var(--yellow);
+}
+
+table a.remove {
+    text-decoration: none;
+    color: var(--red);
+}
+
+table tr a:hover {
+    text-decoration: none;
+    color: var(--white);
 }
