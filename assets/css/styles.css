@@ -333,6 +333,7 @@ main {
     justify-content: center;
     width: 100%;
     height: auto;
+    margin-bottom: 65px;
 }
 
 .introductie {
@@ -347,6 +348,21 @@ main {
 .introductie .heading {
     width: 100%;
     height: auto;
+}
+
+.introductie .options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    row-gap: 30px;
+    column-gap: 30px;
+    width: 100%;
+    height: auto;
+    margin-top: 50px;
+}
+
+.introductie .options button {
+    width: auto;
 }
 
 .introductie .content {
@@ -721,6 +737,97 @@ main {
 
 .huisregels .accordion ul {
     list-style-type: none;
+}
+
+/* Forms spacer */
+.forms-spacer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+}
+
+.forms {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    text-align: center;
+}
+
+/* Form */
+.inschrijven-form form {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+    padding: 25px;
+    background-color: var(--black);
+    border: 1px solid var(--border);
+}
+
+.inschrijven-form form input,
+.inschrijven-form form select {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 15px;
+    padding: 8px 15px;
+    line-height: 24px;
+    font-size: 14px;
+    border: 1px solid lightslategray;
+    outline: none;
+}
+
+.inschrijven-form form input:read-only {
+    background-color: var(--darker);
+    color: var(--white);
+}
+
+.inschrijven-form form .agree {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.inschrijven-form form .agree input {
+    width: 20px;
+    height: 20px;
+    border: 1px solid lightslategray;
+    outline: none;
+    margin-bottom: 0px;
+    margin-right: 10px;
+}
+
+.inschrijven-form form button {
+    width: 100%;
+    height: auto;
+    padding: 10px 0px 9px;
+    color: var(--black);
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    border-radius: 8px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.inschrijven-form form button.add {
+    background-color: var(--green);
+}
+
+.inschrijven-form form button.update {
+    background-color: var(--yellow);
+}
+
+.inschrijven-form form button.remove {
+    background-color: var(--red);
+}
+
+.inschrijven-form form button:hover {
+    background-color: var(--white);
 }
 
 /* Modals */

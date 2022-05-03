@@ -20,19 +20,33 @@
                 $stmt->bindParam(":username", $_POST['username']);
                 $stmt->bindParam(":password", $hashedPW);
                 $stmt->bindParam(":admin", $noAdmin);
-                $stmt->execute();
+                $result = $stmt->execute();
+
+                if ($result) {
+                    $sql = "SELECT * FROM users WHERE username = :username";
+                    $stmt = $connect->prepare($sql);
+                    $stmt->bindParam(":username", $_POST['username']);
+                    $stmt->execute();
+                    $result = $stmt->fetch();
+
+                    session_start();
     
-                // Melding geven dat gebruiker is aangemaakt
-                header("Location: ../index.php?bericht=gelukt");
-                exit();
+                    $_SESSION['userID'] = $result['userID'];
+                    $_SESSION['username'] = $result['username'];
+    
+                    // Direct ingelogd
+                    header("Location: ../inschrijven.php");
+                    exit();
+
+                }
             } else {
                 // Gebruiker bestaat al met naam
-                header("Location: ../index.php");
+                header("Location: ../inschrijven.php?message=nametaken");
                 exit();
             }
         } else {
             // Wachtwoorden niet gelijk
-            header("Location: ../index.php");
+            header("Location: ../inschrijven.php?message=matchingpasswords");
             exit();
         }
     } else {
