@@ -1,147 +1,122 @@
 <?php 
-    $page = 'index';
+    $page = 'huisregels';
+    include('includes/session.php');
+    include('includes/connect.php');
     include('includes/header.php');
-    include('includes/modals.php');
     include('includes/hamburger.php');
 ?>
 
-<section class="landing-spacer">
-    <div class="title overlay">
-        <h1>TechnoviumLAN</h1>
-        <h2>Where gamers unite!</h2>
-    </div>
-    <div class="background-video">
-        <video autoplay muted loop>
-            <source src="assets/media/video/background.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-        </video>
-    </div>
-    <header class="landing homepage">
-        <div class="logo overlay"><h3>TechnoviumLAN</h3></div>
-        <nav>
-            <ul>
-                <a href="index.php"><li>Home</li></a>
-                <a href="inschrijven.php"><li>Inschrijven</li></a>
-                <a href="huisregels.php"><li>Huisregels</li></a>
-                <a href="contact.php"><li>Contact</li></a>
-            </ul>
-        </nav>
-        <div class="buttons">
-            <ul>
-                <li>
-                    <button id="aanmeldKnop">Aanmelden</button>
-                </li>
-                <li>
-                    <button class="yellow" id="registratieKnop">
-                        Registreren
-                    </button>
-                </li>
-            </ul>
-        </div>
-    </header>
-</section>
+<?php 
+    include('includes/navigation.php');
+    $likeDatum = "%".date("Y")."%";
+?>
 
 <main>
     <section class="introductie-spacer">
         <div class="container">
             <div class="introductie">
                 <div class="heading">
-                    <h2 class="title green">What's going on?</h2>
-                    <p class="subtitle">Lorem ipsum dolor sit amet.</p>
+                    <h2 class="title green">Algemeen</h2>
+                    <p class="subtitle">Standaard instellingen</p>
                 </div>
-                <div class="content">
-                    <p class="text">
-                        Lorem ipsum dolor sit amet consectetur
-                        adipisicing elit. Sit nostrum minima nihil
-                        dolores adipisci earum eaque excepturi natus
-                        quidem, cumque repellat. Vero possimus unde
-                        asperiores officia quia. Quis excepturi
-                        molestias nulla accusantium veritatis illum,
-                        laborum magnam quae neque, facere inventore
-                        saepe commodi debitis doloremque quod molestiae.
-                        Dolore vel iure officia accusamus similique
-                        maiores fugiat quibusdam. Consectetur, impedit
-                        quasi doloribus voluptate consequatur debitis id
-                        officia omnis soluta eos ab expedita recusandae
-                        unde veniam at esse ipsa sunt aut nemo libero
-                        commodi nihil. Molestias rem cumque facilis
-                        minima nisi, fugiat reprehenderit ipsum est sit.
-                        Laboriosam ipsam!
-                    </p>
-                </div>
+                <?php 
+                    if (isset($_GET['message'])) {
+                        $message = '';
+
+                        switch ($_GET['message']) {
+                            case 'updated':
+                                $message = 'De data is aangepast.';
+                                break;
+                            default: 
+                                $message = 'Er gaat iets fout bij het behandelen van een error';
+                                break;
+                        }
+                ?>
+                    <div class="alert-container">
+                        <div class="alert">
+                            <p><?php echo $message; ?></p>
+                        </div>
+                    </div>
+                <?php 
+                    }
+                ?>
             </div>
         </div>
     </section>
-
-    <section class="timer-spacer">
+    <div class="forms-spacer">
         <div class="container">
-            <div class="timer">
-                <p class="timer-text" id="countdown"></p>
-            </div>
-        </div>
-    </section>
+            <div class="forms">
+                <?php 
+                    $id = 1;
+                    $sql = "SELECT * FROM algemeen WHERE ID = :ID";
+                    $stmt = $connect->prepare($sql);
+                    $stmt->bindParam(':ID', $id);
+                    $stmt->execute();
+                    $user = $stmt->fetch();
+                    $count = $stmt->rowCount();
 
-    <section class="informatie-spacer">
-        <div class="informatie-blok">
-            <div class="informatie">
-                <div class="heading">
-                    <h3 class="title green">What's going on?</h3>
-                    <p class="subtitle">Lorem ipsum dolor sit amet.</p>
-                </div>
-                <div class="content">
-                    <p class="text">
-                        Lorem ipsum dolor sit amet consectetur
-                        adipisicing elit. Sit nostrum minima nihil
-                        dolores adipisci earum eaque excepturi natus
-                        quidem, cumque repellat. Vero possimus unde
-                        asperiores officia quia. Quis excepturi
-                        molestias nulla accusantium veritatis illum,
-                        laborum magnam quae neque, facere inventore
-                        saepe commodi debitis doloremque quod molestiae.
-                        Dolore vel iure officia accusamus similique
-                        maiores fugiat quibusdam. Consectetur, impedit
-                        quasi doloribus voluptate consequatur debitis id
-                        officia omnis soluta eos ab expedita recusandae
-                        unde veniam at esse ipsa sunt aut nemo libero
-                        commodi nihil. Molestias rem cumque facilis
-                        minima nisi, fugiat reprehenderit ipsum est sit.
-                        Laboriosam ipsam!
-                    </p>
-                </div>
-            </div>
-            <div class="afbeelding">
-                <img src="assets/media/tekst1.png" alt="" />
+                    if (isset($_GET['type'])) {
+                        if ($_GET['type'] === 'update') {
+                            if($count) {
+                ?>
+                                <form action="php/algemeen.php" method='post'>
+                                    <input
+                                        type="text"
+                                        name="plaatsen"
+                                        value="<?php echo $user['plaatsen']; ?>"
+                                        required
+                                    />
+                                    <input
+                                        type="date"
+                                        name="startdatum"
+                                        value="<?php echo $user['startdatum']; ?>"
+                                        required
+                                    />
+                                    <input
+                                        type="date"
+                                        name="einddatum"
+                                        value="<?php echo $user['einddatum']; ?>"
+                                        required
+                                    />
+                                    <button type="submit" name="update" class="update">Aanpassen</button>
+                                </form>
+                <?php
+                            }       
+                        }
+                    }
+                ?>
             </div>
         </div>
-        <div class="informatie-blok right-handed">
-            <div class="afbeelding">
-                <img src="assets/media/tekst2.png" alt="" />
-            </div>
-            <div class="informatie">
-                <div class="heading">
-                    <h3 class="title yellow">What's going on?</h3>
-                    <p class="subtitle">Lorem ipsum dolor sit amet.</p>
-                </div>
-                <div class="content">
-                    <p class="text">
-                        Lorem ipsum dolor sit amet consectetur
-                        adipisicing elit. Sit nostrum minima nihil
-                        dolores adipisci earum eaque excepturi natus
-                        quidem, cumque repellat. Vero possimus unde
-                        asperiores officia quia. Quis excepturi
-                        molestias nulla accusantium veritatis illum,
-                        laborum magnam quae neque, facere inventore
-                        saepe commodi debitis doloremque quod molestiae.
-                        Dolore vel iure officia accusamus similique
-                        maiores fugiat quibusdam. Consectetur, impedit
-                        quasi doloribus voluptate consequatur debitis id
-                        officia omnis soluta eos ab expedita recusandae
-                        unde veniam at esse ipsa sunt aut nemo libero
-                        commodi nihil. Molestias rem cumque facilis
-                        minima nisi, fugiat reprehenderit ipsum est sit.
-                        Laboriosam ipsam!
-                    </p>
-                </div>
+    </div>
+    <section class="table-spacer">
+        <div class="container">
+            <div class="table">
+                <table>
+                    <tr>
+                        <th>Aantal plaatsen</th>
+                        <th>Start inschrijvingen</th>
+                        <th>Einde inschrijvingen</th>
+                        <th>Aanpassen</th>
+                    </tr>
+                    <?php
+                        if (!$count) {
+                    ?> 
+                        <tr>
+                            <td colspan="4">Geen data gevonden</td>
+                        </tr>
+                    <?php
+                        } else {
+                    ?> 
+                            <tr>
+                                <td><?php echo $user['plaatsen']; ?></td>
+                                <td><?php echo $user['startdatum']; ?></td>
+                                <td><?php echo $user['einddatum']; ?></td>
+                                <td><a href="index.php?type=update">Aanpassen</a></td>
+                            </tr>
+                    <?php
+                        }
+                    ?>
+                </table>
             </div>
         </div>
     </section>

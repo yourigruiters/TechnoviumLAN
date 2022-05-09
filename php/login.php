@@ -16,18 +16,28 @@
 
                 $_SESSION['userID'] = $result['userID'];
                 $_SESSION['username'] = $result['username'];
+
+                if ($result['admin']) {
     
-                // Melding geven dat gebruiker is aangemaakt
-                header("Location: ../index.php");
-                exit();
+                    // Melding geven dat gebruiker is aangemaakt
+                    header("Location: ../admin/index.php");
+                    exit();
+
+                } else {
+    
+                    // Melding geven dat gebruiker is aangemaakt
+                    header("Location: ../inschrijven.php?message=loggedin");
+                    exit();
+
+                }
             } else {
                 // Wachtwoord klopt niet
-                header("Location: ../index.php");
+                header("Location: ../inschrijven.php?message=wrongpassword");
                 exit();
             }
         } else {
             // Gebruiker bestaat niet met deze username
-            header("Location: ../index.php");
+            header("Location: ../inschrijven.php?message=namenotfound");
             exit();
         }
     } else {

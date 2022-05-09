@@ -8,9 +8,7 @@
             <div class="intro">
                 <h3>Aanmelden</h3>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing
-                    elit. Magni debitis delectus quam nobis illum
-                    dolorum?
+                <span>Melding: </span>Wachtwoord vergeten? In overleg met een admin kun je deze laten wijzigen.
                 </p>
             </div>
             <!-- Moet via AJAX in de toekomst -->
@@ -46,23 +44,21 @@
             <div class="intro">
                 <h3>Registreren</h3>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing
-                    elit. Magni debitis delectus quam nobis illum
-                    dolorum?
+                    <span>Melding: </span>Bij het registeren van een account geef je ons toestemming om je naam in deze applicatie te gebruiken. 
                 </p>
             </div>
             <!-- Moet via AJAX in de toekomst -->
             <form action="php/register.php" method='post'>
                 <input
                     type="text"
-                    name="username"
-                    placeholder="Gebruikersnaam..."
+                    name="fullname"
+                    placeholder="Volledige naam (niet zichtbaar op de website)..."
                     required
                 />
                 <input
                     type="text"
-                    name="email"
-                    placeholder="Email..."
+                    name="username"
+                    placeholder="Gebruikersnaam (zichtbaar op de website)..."
                     required
                 />
                 <input
@@ -77,6 +73,14 @@
                     placeholder="Wachtwoord herhalen..."
                     required
                 />
+                <div class="agree">
+                    <input
+                        type="checkbox"
+                        name="agree"
+                        required
+                    />
+                    <p>Ik ga akkoord met de bovenstaande melding.</p>
+                </div>
                 <button type="submit" name="registreer">Registreer</button>
             </form>
             <div class="option">

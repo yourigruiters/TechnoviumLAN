@@ -1,5 +1,6 @@
 <?php 
     $page = 'index';
+    include('includes/session.php');
     include('includes/header.php');
     include('includes/modals.php');
     include('includes/hamburger.php');
@@ -11,10 +12,10 @@
         <h2>Where gamers unite!</h2>
     </div>
     <div class="background-video">
-        <video autoplay muted loop>
+        <!-- <video autoplay muted loop>
             <source src="assets/media/video/background.mp4" type="video/mp4" />
             Your browser does not support the video tag.
-        </video>
+        </video> -->
     </div>
     <?php 
         include('includes/navigation.php');

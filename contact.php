@@ -1,5 +1,6 @@
 <?php 
     $page = 'contact';
+    include('includes/session.php');
     include('includes/header.php');
     include('includes/modals.php');
     include('includes/hamburger.php');

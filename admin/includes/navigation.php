@@ -2,10 +2,9 @@
     <div class="logo overlay"><a href="index.php"><h3>TechnoviumLAN</h3></a></div>
     <nav>
         <ul>
-            <a href="index.php"><li>Home</li></a>
-            <a href="inschrijven.php"><li>Inschrijven</li></a>
-            <a href="huisregels.php"><li>Huisregels</li></a>
-            <a href="contact.php"><li>Contact</li></a>
+            <a href="index.php"><li>Algemeen</li></a>
+            <a href="inschrijvingen.php"><li>Inschrijvingen</li></a>
+            <a href="gebruikers.php"><li>Gebruikers</li></a>
         </ul>
     </nav>
     <div class="hamburger" id="hamburger">

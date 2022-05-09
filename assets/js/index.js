@@ -38,6 +38,6 @@ const time = setInterval(() => {
 
     if (timeDistance < 0) {
         clearInterval(x);
-        countdownTimer.innerHTML = 'EXPIRED';
+        countdownTimer.innerHTML = 'We are live!';
     }
 }, 1000);
