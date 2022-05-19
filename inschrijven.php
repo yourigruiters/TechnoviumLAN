@@ -75,13 +75,15 @@
                         if ($_GET['type'] === 'add') {
                 ?>
                     <form action="php/inschrijven.php" method='post'>
+                        <p>Persoonlijke inschrijving ID</p>
                         <input
                             type="text"
                             name="userID"
-                            value="<?php echo $userID; ?> - (Jouw persoonlijke ID)"
+                            value="<?php echo $userID; ?>"
                             required
                             readonly
                         />
+                        <p>Tafel</p>
                         <select name="tafelnummer" required>
                             <option selected disabled>Kies een tafel...</option>
                             <?php 
@@ -123,13 +125,15 @@
                                 if ($_GET['type'] === 'update') {
                 ?>
                                     <form action="php/inschrijven.php" method='post'>
+                                        <p>Persoonlijke inschrijving ID</p>
                                         <input
                                             type="text"
                                             name="inschrijfID"
-                                            value="<?php echo $user['inschrijfID']; ?> - (Jouw inschrijving ID)"
+                                            value="<?php echo $user['inschrijfID']; ?>"
                                             required
                                             readonly
                                         />
+                                        <p>Gebruikersnaam</p>
                                         <input
                                             type="text"
                                             name="username"
@@ -137,6 +141,7 @@
                                             required
                                             readonly
                                         />
+                                        <p>Tafel</p>
                                         <select name="tafelnummer" required>
                                             <?php 
                                                 $sql = "SELECT tafelnummer FROM inschrijvingen WHERE datum LIKE :datum ORDER BY tafelnummer ASC";
@@ -148,7 +153,7 @@
                                                 $count = 1;
                                                 while ($count <= $plaatsen) {
                                                     if ($count === $user['tafelnummer']) {
-                                                        echo "<option value='".$count."' selected>".$count."</option>";
+                                                        echo "<option value='".$count."' selected>".$count." - (Jouw huidige tafel)</option>";
                                                     } else if (!in_array($count, $results)) {
                                                         echo "<option value='".$count."'>".$count."</option>";
                                                     }
@@ -162,13 +167,15 @@
                                 } else {
                 ?> 
                                 <form action="php/inschrijven.php" method='post'>
+                                        <p>Persoonlijke inschrijving ID</p>
                                     <input
                                         type="text"
                                         name="inschrijfID"
-                                        value="<?php echo $user['inschrijfID']; ?> - (Jouw inschrijving ID)"
+                                        value="<?php echo $user['inschrijfID']; ?>"
                                         required
                                         readonly
                                     />
+                                        <p>Gebruikersnaam</p>
                                     <input
                                         type="text"
                                         name="username"

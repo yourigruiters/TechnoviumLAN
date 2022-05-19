@@ -802,6 +802,13 @@ main {
     outline: none;
 }
 
+.inschrijven-form p {
+    line-height: 24px;
+    font-size: 14px;
+    color: var(--white);
+    text-align: left;
+}
+
 .inschrijven-form form input:read-only {
     background-color: var(--darker);
     color: var(--white);
